@@ -1,7 +1,8 @@
-package com.valera.speakhumanish
+package com.valera.speakhumanish.Activitties
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.valera.speakhumanish.R
 
 class MainActivity : AppCompatActivity() {
 
