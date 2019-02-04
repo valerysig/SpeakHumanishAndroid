@@ -1,4 +1,4 @@
-package com.valera.speakhumanish.Model
+package com.valera.speakhumanish.model
 
 import com.valera.speakhumanish.R
 
@@ -13,6 +13,10 @@ object Supplier {
     )
 
     val mainCards = listOf(
+        MainCard(1, "אני רוצה",R.drawable.where_to_go, possibleChildren = listOf(2,3,4,5).toSet())
+    )
+
+    val allCards = listOf(
         MainCard(1, "אני רוצה",R.drawable.where_to_go, possibleChildren = listOf(2,3,4,5).toSet()),
         MainCard(2, "לשחק", R.drawable.to_watch_tv, possibleChildren = listOf(6, 7).toSet()),
         MainCard(3, "לקרוא ספר", R.drawable.one_more_time, possibleChildren = listOf(8, 9).toSet()),
@@ -25,7 +29,5 @@ object Supplier {
         MainCard(10, "שוקולד", R.drawable.doll),
         MainCard(11, "תפוז", R.drawable.doll),
         MainCard(12, "לבקר את סבתא", R.drawable.doll),
-        MainCard(13, "גן חיות", R.drawable.doll)
-
-    )
+        MainCard(13, "גן חיות", R.drawable.doll))
 }

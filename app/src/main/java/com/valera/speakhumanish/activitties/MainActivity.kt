@@ -1,12 +1,12 @@
-package com.valera.speakhumanish.Activitties
+package com.valera.speakhumanish.activitties
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
-import com.valera.speakhumanish.Adapters.MainCardsAdapter
-import com.valera.speakhumanish.Adapters.StaticCardsAdapter
-import com.valera.speakhumanish.Model.Supplier
+import com.valera.speakhumanish.adapters.MainCardsAdapter
+import com.valera.speakhumanish.adapters.StaticCardsAdapter
+import com.valera.speakhumanish.model.Supplier
 import com.valera.speakhumanish.R
 import kotlinx.android.synthetic.main.activity_main.*
 

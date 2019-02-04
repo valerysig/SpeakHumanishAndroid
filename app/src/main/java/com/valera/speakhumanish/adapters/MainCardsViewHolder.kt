@@ -1,8 +1,8 @@
-package com.valera.speakhumanish.Adapters
+package com.valera.speakhumanish.adapters
 
 import android.util.Log
 import android.view.View
-import com.valera.speakhumanish.Activitties.MainActivity
+import com.valera.speakhumanish.activitties.MainActivity
 
 class MainCardsViewHolder(itemView: View) : CardsViewHolder(itemView) {
     override fun onPressed() {

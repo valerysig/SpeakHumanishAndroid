@@ -1,10 +1,10 @@
-package com.valera.speakhumanish.Adapters
+package com.valera.speakhumanish.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
-import com.valera.speakhumanish.Activitties.MainActivity
-import com.valera.speakhumanish.Model.Card
+import com.valera.speakhumanish.activitties.MainActivity
+import com.valera.speakhumanish.model.Card
 import kotlinx.android.synthetic.main.card_item.view.*
 
 open class CardsViewHolder(itemView: View) :  RecyclerView.ViewHolder(itemView) {

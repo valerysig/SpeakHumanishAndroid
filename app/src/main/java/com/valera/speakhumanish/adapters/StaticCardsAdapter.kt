@@ -1,10 +1,10 @@
-package com.valera.speakhumanish.Adapters
+package com.valera.speakhumanish.adapters
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.valera.speakhumanish.Model.Card
+import com.valera.speakhumanish.model.Card
 import com.valera.speakhumanish.R
 
 open class StaticCardsAdapter (private val context: Context, private val cards: List<Card>) : RecyclerView.Adapter<CardsViewHolder>(){
