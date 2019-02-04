@@ -12,8 +12,8 @@ object Supplier {
         Card("Some text 1212121", R.drawable.enough)
     )
 
-    val mainCards = listOf(
-        MainCard(1, "אני רוצה",R.drawable.where_to_go, possibleChildren = listOf(2,3,4,5).toSet())
+    var mainCards = listOf(
+        MainCard(1, "אני רוצה",R.drawable.where_to_go, possibleChildren = setOf(2,3,4,5))
     )
 
     val allCards = listOf(
