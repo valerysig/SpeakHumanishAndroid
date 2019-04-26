@@ -1,4 +1,5 @@
 package com.valera.speakhumanish.model
 
-class MainCard(id: Int, label: String, imageLocation: Int, soundLocation: Int? = null, possibleChildren: Set<Int> = HashSet()) :
-    Card(label, imageLocation, soundLocation)
+//TODO: Maybe remove this class altogether
+class MainCard(id: Long, label: String, imageLocation: Int, soundLocation: Int? = null, possibleChildren: Set<Long> = HashSet()) :
+    Card(id, label, imageLocation, soundLocation)

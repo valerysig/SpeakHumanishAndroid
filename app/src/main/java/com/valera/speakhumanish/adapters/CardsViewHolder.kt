@@ -31,8 +31,7 @@ open class CardsViewHolder(private val context: Context, itemView: View) :  Recy
         this.pos = position
     }
 
-    private fun onPressed() {
-        //TODO: set the card switching
+    protected open fun onPressed() {
         playSound()
         printLog()
     }

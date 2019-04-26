@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.valera.speakhumanish.model.Card
 import com.valera.speakhumanish.R
+import com.valera.speakhumanish.services.IGridUpdater
 
 open class StaticCardsAdapter (private val context: Context, private val cards: List<Card>) : RecyclerView.Adapter<CardsViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): CardsViewHolder {
