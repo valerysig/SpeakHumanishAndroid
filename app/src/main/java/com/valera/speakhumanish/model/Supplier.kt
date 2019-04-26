@@ -13,7 +13,7 @@ object Supplier {
     )
 
     var mainCards = listOf(
-        MainCard(1, "אני רוצה",R.drawable.where_to_go, possibleChildren = setOf(2,3,4,5))
+        MainCard(1, "אני רוצה",R.drawable.where_to_go, soundLocation =  R.raw.english_i_want, possibleChildren = setOf(2,3,4,5))
     )
 
     val allCards = listOf(

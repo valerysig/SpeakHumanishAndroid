@@ -10,7 +10,7 @@ import com.valera.speakhumanish.R
 open class StaticCardsAdapter (private val context: Context, private val cards: List<Card>) : RecyclerView.Adapter<CardsViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): CardsViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.card_item, parent, false)
-        return CardsViewHolder(view)
+        return CardsViewHolder(context, view)
     }
 
     override fun getItemCount(): Int {
