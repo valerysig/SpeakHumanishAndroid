@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         setupStaticCardsRecyclerView()
         setupMainCardsRecyclerView()
         setupPressedCardsRecyclerView()
+        updateUI()
 
         // Hook up the buttons
         clearOneButton.setOnClickListener { Thread { clearOneButtonPressed() }.start() }
@@ -82,9 +83,6 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
 
         staticCardsView.layoutManager = layoutManager
         staticCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
-
-        val adapter = MutatingCardsAdapter(this, cardsService.getStaticCards(), this)
-        staticCardsView.adapter = adapter
     }
 
     private fun setupMainCardsRecyclerView() {
@@ -93,9 +91,6 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
 
         mainCardsView.layoutManager = layoutManager
         mainCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
-
-        val adapter = MutatingCardsAdapter(this, cardsService.getMainCards(), this)
-        mainCardsView.adapter = adapter
     }
 
     private fun setupPressedCardsRecyclerView() {
@@ -104,9 +99,6 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
 
         selectedCardsView.layoutManager = layoutManager
         selectedCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
-
-        val adapter = CardsAdapter(this, cardsService.getPressedCards())
-        selectedCardsView.adapter = adapter
     }
 
     private fun updateUI() {
