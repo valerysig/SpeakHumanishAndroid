@@ -10,14 +10,25 @@ import com.valera.speakhumanish.adapters.MainCardsAdapter
 import com.valera.speakhumanish.adapters.StaticCardsAdapter
 import com.valera.speakhumanish.model.Supplier
 import com.valera.speakhumanish.R
+import com.valera.speakhumanish.services.DaggerServicesComponent
+import com.valera.speakhumanish.services.ICardsService
 import com.valera.speakhumanish.services.IGridUpdater
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), IGridUpdater {
 
+    @Inject
+    lateinit var cardsService: ICardsService
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Android init
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Injects all services
+        val servicesComponent = DaggerServicesComponent.create()
+        servicesComponent.inject(this)
 
         setupStaticCardsRecyclerView()
         setupMainCardsRecyclerView()
@@ -32,6 +43,7 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         }
     }
 
+    //region Private Methods
     private fun setupStaticCardsRecyclerView() {
         val layoutManager = GridLayoutManager(this, 1)
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
@@ -53,4 +65,5 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         val adapter = MainCardsAdapter(this, Supplier.mainCards, this)
         mainCardsView.adapter = adapter
     }
+    //endregion
 }
