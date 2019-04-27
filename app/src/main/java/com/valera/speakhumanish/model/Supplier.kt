@@ -13,21 +13,21 @@ object Supplier {
     )
 
     var mainCards = listOf(
-        MainCard(1, "אני רוצה",R.drawable.where_to_go, soundLocation =  R.raw.english_i_want, possibleChildren = setOf(2,3,4,5))
+        Card(1, "אני רוצה",R.drawable.where_to_go, soundLocation =  R.raw.english_i_want, possibleChildren = setOf(2,3,4,5))
     )
 
     var allCards = listOf(
-        MainCard(1, "אני רוצה",R.drawable.where_to_go, soundLocation =  R.raw.english_i_want, possibleChildren = setOf(2,3,4,5)),
-        MainCard(2, "לשחק", R.drawable.to_watch_tv, possibleChildren = setOf(6, 7)),
-        MainCard(3, "לקרוא ספר", R.drawable.one_more_time, possibleChildren = setOf(8, 9)),
-        MainCard(4, "לאכול", R.drawable.people, possibleChildren = setOf(10, 11)),
-        MainCard(5, "ללכת", R.drawable.to_eat, possibleChildren = setOf(12, 13)),
-        MainCard(6, "כרורגל", R.drawable.to_play),
-        MainCard(7, "פלייסטיישן", R.drawable.ball),
-        MainCard(8, "אלכימאי", R.drawable.baloon),
-        MainCard(9, "צופן דה וינצ'י", R.drawable.car),
-        MainCard(10, "שוקולד", R.drawable.doll),
-        MainCard(11, "תפוז", R.drawable.doll),
-        MainCard(12, "לבקר את סבתא", R.drawable.doll),
-        MainCard(13, "גן חיות", R.drawable.doll))
+        Card(1, "אני רוצה",R.drawable.where_to_go, soundLocation =  R.raw.english_i_want, possibleChildren = setOf(2,3,4,5)),
+        Card(2, "לשחק", R.drawable.to_watch_tv, possibleChildren = setOf(6, 7)),
+        Card(3, "לקרוא ספר", R.drawable.one_more_time, possibleChildren = setOf(8, 9)),
+        Card(4, "לאכול", R.drawable.people, possibleChildren = setOf(10, 11)),
+        Card(5, "ללכת", R.drawable.to_eat, possibleChildren = setOf(12, 13)),
+        Card(6, "כרורגל", R.drawable.to_play),
+        Card(7, "פלייסטיישן", R.drawable.ball),
+        Card(8, "אלכימאי", R.drawable.baloon),
+        Card(9, "צופן דה וינצ'י", R.drawable.car),
+        Card(10, "שוקולד", R.drawable.doll),
+        Card(11, "תפוז", R.drawable.doll),
+        Card(12, "לבקר את סבתא", R.drawable.doll),
+        Card(13, "גן חיות", R.drawable.doll))
 }
