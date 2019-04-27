@@ -6,6 +6,7 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.CardView
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
@@ -46,9 +47,11 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
     override fun updateGrid(cardId : Long, itemView : View) {
         cardsService.updatePresentingCards(cardId)
 
+        // ((itemView as CardView).parent as View).y
+
         runOnUiThread {
-            val moveDown = ObjectAnimator.ofFloat(itemView, "translationY", 378f)
-            val moveLeft = ObjectAnimator.ofFloat(itemView, "translationX", 0f)
+            val moveDown = ObjectAnimator.ofFloat(itemView, "translationY", getYPoints(itemView))
+            val moveLeft = ObjectAnimator.ofFloat(itemView, "translationX", getXPoints(itemView))
 
             val animator = AnimatorSet()
             animator.play(moveDown).with(moveLeft)
@@ -123,6 +126,15 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
     private fun clearAllButtonPressed() {
         cardsService.clear()
         updateUI()
+    }
+
+    private fun getXPoints(itemView : View) : Float {
+        val cardsInPlayBar = cardsService.getPressedCards().size
+        return - (itemView.width + (itemView as CardView).radius*2) * cardsInPlayBar + (mainActivityView.width - itemView.x)
+    }
+
+    private fun getYPoints(itemView : View) : Float {
+        return playBarView.y - ((itemView as CardView).parent as View).y - itemView.y + itemView.radius
     }
     //endregion
 }
