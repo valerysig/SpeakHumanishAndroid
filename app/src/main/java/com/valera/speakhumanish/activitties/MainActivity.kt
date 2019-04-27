@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
     override fun updateGrid(cardId : Long) {
         // Have to run on UI thread since we update the UI here
         runOnUiThread {
-            //TODO: Remove this functionality and change as it should be
-            val adapter = MainCardsAdapter(this, Supplier.allCards, this)
+            cardsService.updatePresentingCards(cardId)
+            val adapter = MainCardsAdapter(this, cardsService.getMainCards(), this)
             mainCardsView.adapter = adapter
         }
     }
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         staticCardsView.layoutManager = layoutManager
         staticCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
 
-        val adapter = StaticCardsAdapter(this, Supplier.StaticCards)
+        val adapter = StaticCardsAdapter(this, cardsService.getStaticCards())
         staticCardsView.adapter = adapter
     }
 
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         mainCardsView.layoutManager = layoutManager
         mainCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
 
-        val adapter = MainCardsAdapter(this, Supplier.mainCards, this)
+        val adapter = MainCardsAdapter(this, cardsService.getMainCards(), this)
         mainCardsView.adapter = adapter
     }
     //endregion

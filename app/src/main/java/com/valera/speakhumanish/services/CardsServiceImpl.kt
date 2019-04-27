@@ -32,12 +32,15 @@ class CardsServiceImpl
         return this.mainCards
     }
 
-    override fun updatePresentingCards(selectedCard: Card) {
-        pressedCards.add(selectedCard)
-        previousCardsStack.add(this.mainCards)
+    override fun updatePresentingCards(selectedCardId: Long) {
+        val selectedCard = allCards[selectedCardId]
+        selectedCard?.let {
+            pressedCards.add(selectedCard)
+            previousCardsStack.add(this.mainCards)
 
-        val newCardsIndicies = selectedCard.possibleChildren
-        this.mainCards = allCards.filter { newCardsIndicies.contains(it.key) }.values.toList()
+            val newCardsIndicies = selectedCard.possibleChildren
+            this.mainCards = allCards.filter { newCardsIndicies.contains(it.key) }.values.toList()
+        }
     }
 
     override fun backOneLevel() {
