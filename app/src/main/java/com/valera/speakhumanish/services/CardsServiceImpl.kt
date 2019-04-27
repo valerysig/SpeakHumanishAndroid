@@ -24,12 +24,24 @@ class CardsServiceImpl
         previousCardsStack = mutableListOf()
     }
 
+    override fun clear() {
+        if (previousCardsStack.isNotEmpty()) {
+            mainCards = previousCardsStack[0]
+        }
+        pressedCards.clear()
+        previousCardsStack.clear()
+    }
+
     override fun getStaticCards(): List<Card> {
         return this.staticCards
     }
 
     override fun getMainCards(): List<Card> {
         return this.mainCards
+    }
+
+    override fun getPressedCards(): List<Card> {
+        return this.pressedCards
     }
 
     override fun updatePresentingCards(selectedCardId: Long) {
@@ -46,9 +58,9 @@ class CardsServiceImpl
     override fun backOneLevel() {
         if (previousCardsStack.isNotEmpty()) {
             this.mainCards = previousCardsStack.last()
-            previousCardsStack.dropLast(1)
+            previousCardsStack.removeAt(previousCardsStack.size - 1)
 
-            pressedCards.dropLast(1)
+            pressedCards.removeAt(pressedCards.size - 1)
         }
     }
 }
