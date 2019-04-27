@@ -48,20 +48,20 @@ class CardsServiceImpl
         val selectedCard = allCards[selectedCardId]
         selectedCard?.let {
             pressedCards.add(selectedCard)
-            previousCardsStack.add(this.mainCards)
 
             val newCardsIndicies = selectedCard.possibleChildren
             newCardsIndicies?.let {
+                previousCardsStack.add(this.mainCards)
                 this.mainCards = allCards.filter { newCardsIndicies.contains(it.key) }.values.toList()
             }
         }
     }
 
     override fun backOneLevel() {
-        if (previousCardsStack.isNotEmpty()) {
+        if (pressedCards.isNotEmpty()) {
             val removedCard = pressedCards.removeAt(pressedCards.size - 1)
 
-            if (removedCard.possibleChildren != null) {
+            removedCard.possibleChildren?.let {
                 this.mainCards = previousCardsStack.last()
                 previousCardsStack.removeAt(previousCardsStack.size - 1)
             }
