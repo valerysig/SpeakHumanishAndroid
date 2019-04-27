@@ -5,11 +5,11 @@ import com.valera.speakhumanish.R
 //TODO: VALERA This will be irrelevant once we add a JSON parsing method
 object Supplier {
     val StaticCards = listOf(
-        Card(0, "Some text 1212121", R.drawable.ball),
-        Card(0, "Some text 1212121", R.drawable.baloon),
-        Card(0, "Some text 1212121", R.drawable.car),
-        Card(0, "Some text 1212121", R.drawable.doll),
-        Card(0, "Some text 1212121", R.drawable.enough)
+        Card(14, "Some text 1212121", R.drawable.ball, possibleChildren = null),
+        Card(15, "Some text 1212121", R.drawable.baloon, possibleChildren = null),
+        Card(16, "Some text 1212121", R.drawable.car, possibleChildren = null),
+        Card(17, "Some text 1212121", R.drawable.doll, possibleChildren = null),
+        Card(18, "Some text 1212121", R.drawable.enough, possibleChildren = null)
     )
 
     var mainCards = listOf(
@@ -29,5 +29,12 @@ object Supplier {
         Card(10, "שוקולד", R.drawable.doll),
         Card(11, "תפוז", R.drawable.doll),
         Card(12, "לבקר את סבתא", R.drawable.doll),
-        Card(13, "גן חיות", R.drawable.doll))
+        Card(13, "גן חיות", R.drawable.doll),
+
+        Card(14, "Some text 1212121", R.drawable.ball, possibleChildren = null),
+        Card(15, "Some text 1212121", R.drawable.baloon, possibleChildren = null),
+        Card(16, "Some text 1212121", R.drawable.car, possibleChildren = null),
+        Card(17, "Some text 1212121", R.drawable.doll, possibleChildren = null),
+        Card(18, "Some text 1212121", R.drawable.enough, possibleChildren = null)
+    )
 }

@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import com.valera.speakhumanish.adapters.MainCardsAdapter
-import com.valera.speakhumanish.adapters.StaticCardsAdapter
+import com.valera.speakhumanish.adapters.MutatingCardsAdapter
+import com.valera.speakhumanish.adapters.CardsAdapter
 import com.valera.speakhumanish.R
 import com.valera.speakhumanish.services.DaggerServicesComponent
 import com.valera.speakhumanish.services.ICardsService
@@ -28,10 +28,12 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         val servicesComponent = DaggerServicesComponent.create()
         servicesComponent.inject(this)
 
+        // Setup the cards layouts
         setupStaticCardsRecyclerView()
         setupMainCardsRecyclerView()
         setupPressedCardsRecyclerView()
 
+        // Hook up the buttons
         clearOneButton.setOnClickListener { Thread { clearOneButtonPressed() }.start() }
         clearAllButton.setOnClickListener { Thread { clearAllButtonPressed() }.start() }
     }
@@ -50,7 +52,7 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         staticCardsView.layoutManager = layoutManager
         staticCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
 
-        val adapter = StaticCardsAdapter(this, cardsService.getStaticCards())
+        val adapter = MutatingCardsAdapter(this, cardsService.getStaticCards(), this)
         staticCardsView.adapter = adapter
     }
 
@@ -61,7 +63,7 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         mainCardsView.layoutManager = layoutManager
         mainCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
 
-        val adapter = MainCardsAdapter(this, cardsService.getMainCards(), this)
+        val adapter = MutatingCardsAdapter(this, cardsService.getMainCards(), this)
         mainCardsView.adapter = adapter
     }
 
@@ -72,17 +74,17 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         selectedCardsView.layoutManager = layoutManager
         selectedCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
 
-        val adapter = StaticCardsAdapter(this, cardsService.getPressedCards())
+        val adapter = CardsAdapter(this, cardsService.getPressedCards())
         selectedCardsView.adapter = adapter
     }
 
     private fun updateUI() {
         // Have to run on UI thread since we update the UI here
         runOnUiThread {
-            val mainCardsAdapter = MainCardsAdapter(this, cardsService.getMainCards(), this)
+            val mainCardsAdapter = MutatingCardsAdapter(this, cardsService.getMainCards(), this)
             mainCardsView.adapter = mainCardsAdapter
 
-            val pressedCardsAdapter = StaticCardsAdapter(this, cardsService.getPressedCards())
+            val pressedCardsAdapter = CardsAdapter(this, cardsService.getPressedCards())
             selectedCardsView.adapter = pressedCardsAdapter
         }
     }

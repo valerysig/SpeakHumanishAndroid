@@ -7,9 +7,9 @@ import com.valera.speakhumanish.R
 import com.valera.speakhumanish.model.Card
 import com.valera.speakhumanish.services.IGridUpdater
 
-class MainCardsAdapter(private val context: Context, private val cards: List<Card>, private val gridUpdater: IGridUpdater) : StaticCardsAdapter(context, cards) {
+class MutatingCardsAdapter(private val context: Context, private val cards: List<Card>, private val gridUpdater: IGridUpdater) : CardsAdapter(context, cards) {
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): CardsViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.card_item, parent, false)
-        return MainCardsViewHolder(context, view, gridUpdater)
+        return MutatingCardsViewHolder(context, view, gridUpdater)
     }
 }
