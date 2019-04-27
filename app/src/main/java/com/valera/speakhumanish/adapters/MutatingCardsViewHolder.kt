@@ -14,6 +14,6 @@ class MutatingCardsViewHolder(private val context: Context, itemView: View, priv
     override fun onPressed() {
         super.onPressed()
 
-        gridUpdater.updateGrid(this.currentCard!!.id)
+        gridUpdater.updateGrid(this.currentCard!!.id, itemView)
     }
 }
