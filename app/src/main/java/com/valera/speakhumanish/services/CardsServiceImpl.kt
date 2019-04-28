@@ -3,7 +3,9 @@ package com.valera.speakhumanish.services
 import com.valera.speakhumanish.model.Card
 import com.valera.speakhumanish.model.Supplier
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class CardsServiceImpl
     @Inject constructor() : ICardsService {
 
