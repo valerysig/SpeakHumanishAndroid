@@ -13,9 +13,10 @@ import android.widget.LinearLayout
 import com.valera.speakhumanish.R
 import com.valera.speakhumanish.adapters.CardsAdapter
 import com.valera.speakhumanish.adapters.MutatingCardsAdapter
-import com.valera.speakhumanish.services.DaggerServicesComponent
+import com.valera.speakhumanish.model.Supplier
 import com.valera.speakhumanish.services.ICardsService
 import com.valera.speakhumanish.services.IGridUpdater
+import com.valera.speakhumanish.utils.DaggerProductionComponent
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -28,9 +29,10 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         // Android init
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Supplier.mainActivity = this
 
         // Injects all services
-        val servicesComponent = DaggerServicesComponent.create()
+        val servicesComponent = DaggerProductionComponent.create()
         servicesComponent.inject(this)
 
         // Setup the cards layouts

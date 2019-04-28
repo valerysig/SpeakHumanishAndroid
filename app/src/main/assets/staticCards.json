@@ -1,0 +1,34 @@
+{
+  "cards": {
+    "100": {
+      "imageLocation": "ball",
+      "soundLocation": "",
+      "lable": "Some text 1212121",
+      "possibleChildren": null
+    },
+    "101": {
+      "imageLocation": "baloon",
+      "soundLocation": "",
+      "lable": "Some text 1212121",
+      "possibleChildren": null
+    },
+    "102": {
+      "imageLocation": "car",
+      "soundLocation": "",
+      "lable": "Some text 1212121",
+      "possibleChildren": null
+    },
+    "103": {
+      "imageLocation": "doll",
+      "soundLocation": "",
+      "lable": "Some text 1212121",
+      "possibleChildren": null
+    },
+    "104": {
+      "imageLocation": "enough",
+      "soundLocation": "",
+      "lable": "Some text 1212121",
+      "possibleChildren": null
+    }
+  }
+}

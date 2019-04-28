@@ -23,7 +23,7 @@ open class CardsViewHolder(private val context: Context, itemView: View) :  Recy
 
     fun setData(card: Card?, position: Int) {
         card?.let {
-            this.itemView.imgShare.setImageResource(card.imageLocation)
+            this.itemView.imgShare.setImageResource(card.imageLocationID)
             this.itemView.txvTitle.text = card.label
         }
 
@@ -37,8 +37,8 @@ open class CardsViewHolder(private val context: Context, itemView: View) :  Recy
     }
 
     private fun playSound() {
-        if (currentCard != null && currentCard!!.soundLocation != null) {
-            val soundPlayer = MediaPlayer.create(context, currentCard!!.soundLocation!!)
+        if (currentCard != null && currentCard!!.soundLocationID != null) {
+            val soundPlayer = MediaPlayer.create(context, currentCard!!.soundLocationID!!)
             soundPlayer.start()
         }
     }

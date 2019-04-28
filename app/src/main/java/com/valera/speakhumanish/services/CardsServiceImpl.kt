@@ -1,13 +1,13 @@
 package com.valera.speakhumanish.services
 
 import com.valera.speakhumanish.model.Card
-import com.valera.speakhumanish.model.Supplier
+import com.valera.speakhumanish.model.ICardsParser
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class CardsServiceImpl
-    @Inject constructor() : ICardsService {
+    @Inject constructor(private val cardsParser: ICardsParser) : ICardsService {
 
     //region Members
     private val allCards : Map<Long, Card>
@@ -19,9 +19,9 @@ class CardsServiceImpl
 
     init {
         //TODO: After the JSON parsing class is done remove the following 3 lines
-        allCards = Supplier.allCards.map { it.id to it }.toMap()
-        staticCards = Supplier.StaticCards
-        mainCards = Supplier.mainCards
+        allCards = cardsParser.getAllAvailableCards()
+        staticCards = cardsParser.getStaticCards()
+        mainCards = cardsParser.getStartingMainCards()
         pressedCards = mutableListOf()
         previousCardsStack = mutableListOf()
     }
