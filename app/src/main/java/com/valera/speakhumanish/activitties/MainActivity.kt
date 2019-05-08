@@ -1,18 +1,18 @@
 package com.valera.speakhumanish.activitties
 
 import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.CardView
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.valera.speakhumanish.adapters.MutatingCardsAdapter
-import com.valera.speakhumanish.adapters.CardsAdapter
+import android.widget.LinearLayout
 import com.valera.speakhumanish.R
+import com.valera.speakhumanish.adapters.CardsAdapter
+import com.valera.speakhumanish.adapters.MutatingCardsAdapter
 import com.valera.speakhumanish.services.DaggerServicesComponent
 import com.valera.speakhumanish.services.ICardsService
 import com.valera.speakhumanish.services.IGridUpdater
@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
                 }
 
                 override fun onAnimationEnd(animation: Animator?) {
+                    itemView.elevation -= 2
                     updateUI()
                 }
 
@@ -71,7 +72,13 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
                 }
 
                 override fun onAnimationStart(animation: Animator?) {
-                    // Do nothing
+                    // Bring the recycler views to front
+                    (itemView.parent as RecyclerView).bringToFront()
+
+                    // Bring the cards to front
+                    itemView.elevation += 2
+                    itemView.bringToFront()
+
                 }
             })
 
@@ -130,11 +137,11 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
 
     private fun getXPoints(itemView : View) : Float {
         val cardsInPlayBar = cardsService.getPressedCards().size
-        return - (itemView.width + (itemView as CardView).radius*2) * cardsInPlayBar + (mainActivityView.width - itemView.x)
+        return - (itemView.width + (itemView as LinearLayout).paddingBottom*2) * cardsInPlayBar + (mainActivityView.width - itemView.x)
     }
 
     private fun getYPoints(itemView : View) : Float {
-        return playBarView.y - ((itemView as CardView).parent as View).y - itemView.y + itemView.radius
+        return playBarView.y - ((itemView as LinearLayout).parent as View).y - itemView.y + itemView.paddingBottom
     }
     //endregion
 }

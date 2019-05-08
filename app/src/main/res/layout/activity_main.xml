@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- TODO: Replace this linearLayout with a grid layout to avoid nested weights -->
-<LinearLayout
+<GridLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/mainActivityView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="4"
+        android:rowCount="4"
         android:clipChildren="false"
         android:clipToPadding="false"
         tools:context=".activitties.MainActivity">
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/staticCardsView"
-            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"/>
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/mainCardsView"
-            android:layout_weight="2"
             android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp"
+            android:layout_row="1"
+            android:layout_rowWeight="2"
+            android:layout_gravity="fill"/>
 
     <LinearLayout
             android:id="@+id/playBarView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_row="3"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
             android:orientation="horizontal"
             android:weightSum="6"
             android:baselineAligned="false">
@@ -52,4 +58,4 @@
 
 
     </LinearLayout>
-</LinearLayout>
+</GridLayout>
