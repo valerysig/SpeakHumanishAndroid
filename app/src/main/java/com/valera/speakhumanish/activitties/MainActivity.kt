@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         servicesComponent.inject(this)
 
         // Setup the cards layouts
-        setupStaticCardsRecyclerView()
-        setupMainCardsRecyclerView()
-        setupPressedCardsRecyclerView()
+        setupCardsRecyclerView(staticCardsView, 1)
+        setupCardsRecyclerView(mainCardsView, 2)
+        setupCardsRecyclerView(selectedCardsView, 1)
         updateUI()
 
         // Hook up the buttons
@@ -87,28 +87,12 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
     }
 
     //region Private Methods
-    private fun setupStaticCardsRecyclerView() {
-        val layoutManager = GridLayoutManager(this, 1)
+    private fun setupCardsRecyclerView(view: RecyclerView, columnCount : Int) {
+        val layoutManager = GridLayoutManager(this, columnCount)
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
-        staticCardsView.layoutManager = layoutManager
-        staticCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
-    }
-
-    private fun setupMainCardsRecyclerView() {
-        val layoutManager = GridLayoutManager(this, 2)
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-
-        mainCardsView.layoutManager = layoutManager
-        mainCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
-    }
-
-    private fun setupPressedCardsRecyclerView() {
-        val layoutManager = GridLayoutManager(this, 1)
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-
-        selectedCardsView.layoutManager = layoutManager
-        selectedCardsView.layoutDirection = View.LAYOUT_DIRECTION_RTL
+        view.layoutManager = layoutManager
+        view.layoutDirection = View.LAYOUT_DIRECTION_RTL
     }
 
     private fun updateUI() {
