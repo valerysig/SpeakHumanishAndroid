@@ -46,42 +46,9 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
 
     override fun updateGrid(cardId : Long, itemView : View) {
         cardsService.updatePresentingCards(cardId)
-
-        // ((itemView as CardView).parent as View).y
+        val animator = getSetupAnimator(itemView)
 
         runOnUiThread {
-            val moveDown = ObjectAnimator.ofFloat(itemView, "translationY", getYPoints(itemView))
-            val moveLeft = ObjectAnimator.ofFloat(itemView, "translationX", getXPoints(itemView))
-
-            val animator = AnimatorSet()
-            animator.play(moveDown).with(moveLeft)
-            animator.duration = 1000
-
-            animator.addListener(object : Animator.AnimatorListener{
-                override fun onAnimationRepeat(animation: Animator?) {
-                    // Do nothing
-                }
-
-                override fun onAnimationEnd(animation: Animator?) {
-                    itemView.elevation -= 2
-                    updateUI()
-                }
-
-                override fun onAnimationCancel(animation: Animator?) {
-                    // Do nothing
-                }
-
-                override fun onAnimationStart(animation: Animator?) {
-                    // Bring the recycler views to front
-                    (itemView.parent as RecyclerView).bringToFront()
-
-                    // Bring the cards to front
-                    itemView.elevation += 2
-                    itemView.bringToFront()
-
-                }
-            })
-
             animator.start()
         }
     }
@@ -117,6 +84,44 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
     private fun clearAllButtonPressed() {
         cardsService.clear()
         updateUI()
+    }
+
+    private fun getSetupAnimator(itemView : View) : AnimatorSet {
+        val animationDuration = 1000L
+
+        val moveDown = ObjectAnimator.ofFloat(itemView, "translationY", getYPoints(itemView))
+        val moveLeft = ObjectAnimator.ofFloat(itemView, "translationX", getXPoints(itemView))
+
+        val animator = AnimatorSet()
+        animator.play(moveDown).with(moveLeft)
+        animator.duration = animationDuration
+
+        animator.addListener(object : Animator.AnimatorListener{
+            override fun onAnimationRepeat(animation: Animator?) {
+                // Do nothing
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                itemView.elevation -= 2
+                updateUI()
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+                // Do nothing
+            }
+
+            override fun onAnimationStart(animation: Animator?) {
+                // Bring the recycler views to front
+                (itemView.parent as RecyclerView).bringToFront()
+
+                // Bring the cards to front
+                itemView.elevation += 2
+                itemView.bringToFront()
+
+            }
+        })
+
+        return animator
     }
 
     private fun getXPoints(itemView : View) : Float {
