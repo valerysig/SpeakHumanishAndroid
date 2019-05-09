@@ -3,6 +3,7 @@ package com.valera.speakhumanish.activitties
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.res.Resources
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity(), IGridUpdater {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Supplier.mainActivity = this
+        Supplier.cardsWidth = Resources.getSystem().displayMetrics.widthPixels / 8
 
         // Injects all services
         val servicesComponent = DaggerProductionComponent.create()
