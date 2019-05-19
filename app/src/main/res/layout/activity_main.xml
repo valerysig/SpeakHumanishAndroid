@@ -38,23 +38,45 @@
             android:orientation="horizontal"
             android:weightSum="16"
             android:baselineAligned="false">
-        <Button
-                android:id="@+id/clearOneButton"
-                android:text="C"
+        <GridLayout
+                android:layout_weight="3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
-        <Button
-                android:id="@+id/clearAllButton"
-                android:text="CA"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-        <Button android:id="@+id/playAllButton"
-                android:text="PA"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:rowCount="2"
+                android:columnCount="2">
+            <Button
+                    android:id="@+id/clearOneButton"
+                    android:layout_height="0dp"
+                    android:layout_width="0dp"
+                    android:text="C"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"/>
+            <Button
+                    android:id="@+id/clearAllButton"
+                    android:layout_height="0dp"
+                    android:layout_width="0dp"
+                    android:text="CA"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"/>
+            <Button
+                    android:id="@+id/playAllButton"
+                    android:layout_height="0dp"
+                    android:layout_width="0dp"
+                    android:text="PA"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="2"
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="fill"/>
+        </GridLayout>
+
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/selectedCardsView"
                 android:layout_height="match_parent"
