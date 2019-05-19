@@ -5,6 +5,7 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.res.Resources
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
@@ -46,6 +47,7 @@ class MainActivity : Activity(), IGridUpdater {
         // Hook up the buttons
         clearOneButton.setOnClickListener { Thread { clearOneButtonPressed() }.start() }
         clearAllButton.setOnClickListener { Thread { clearAllButtonPressed() }.start() }
+        playAllButton.setOnClickListener { Thread { playAllButtonPressed() }.start() }
     }
 
     override fun updateGrid(cardId : Long, itemView : View) {
@@ -88,6 +90,15 @@ class MainActivity : Activity(), IGridUpdater {
     private fun clearAllButtonPressed() {
         cardsService.clear()
         updateUI()
+    }
+
+    private fun playAllButtonPressed() {
+        cardsService.getPressedCards().forEach { card ->
+            card.soundLocationID?.let {
+                val soundPlayer = MediaPlayer.create(this, card.soundLocationID!!)
+                soundPlayer.start()
+            }
+        }
     }
 
     private fun getSetupAnimator(itemView : View) : AnimatorSet {
