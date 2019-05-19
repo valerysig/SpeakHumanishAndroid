@@ -1,6 +1,7 @@
 package com.valera.speakhumanish.adapters
 
 import android.content.Context
+import android.graphics.PorterDuff
 import android.media.MediaPlayer
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -9,6 +10,7 @@ import com.valera.speakhumanish.activitties.MainActivity
 import com.valera.speakhumanish.model.Card
 import kotlinx.android.synthetic.main.card_item.view.*
 
+
 open class CardsViewHolder(private val context: Context, itemView: View) :  RecyclerView.ViewHolder(itemView) {
     var currentCard : Card? = null
     private var pos: Int = 0
@@ -16,6 +18,15 @@ open class CardsViewHolder(private val context: Context, itemView: View) :  Recy
     init {
         itemView.setOnClickListener {
             Thread {
+                val oldColorFilter = itemView.background.colorFilter
+
+                itemView.background.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP)
+                itemView.postInvalidate()
+
+                Thread.sleep(50)
+
+                itemView.background.colorFilter = oldColorFilter
+                itemView.postInvalidate()
                 onPressed()
             }.start()
         }
