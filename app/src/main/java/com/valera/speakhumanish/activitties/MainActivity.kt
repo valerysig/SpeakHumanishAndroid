@@ -3,9 +3,9 @@ package com.valera.speakhumanish.activitties
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.app.Activity
 import android.content.res.Resources
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -21,7 +21,7 @@ import com.valera.speakhumanish.utils.DaggerProductionComponent
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), IGridUpdater {
+class MainActivity : Activity(), IGridUpdater {
 
     @Inject
     lateinit var cardsService: ICardsService
