@@ -5,6 +5,7 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.res.Resources
+import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
@@ -60,18 +61,21 @@ class MainActivity : Activity(), IGridUpdater {
     }
 
     //region Private Methods
-    private fun setupCardsRecyclerView(view: RecyclerView, columnCount : Int) {
+    private fun setupCardsRecyclerView(view: RecyclerView, columnCount : Int, backgroudColor: String? = null) {
         val layoutManager = GridLayoutManager(this, columnCount)
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
         view.layoutManager = layoutManager
         view.layoutDirection = View.LAYOUT_DIRECTION_RTL
+        backgroudColor?.let {
+            view.setBackgroundColor(Color.parseColor(backgroudColor))
+        }
     }
 
     private fun updateUI() {
         // Have to run on UI thread since we update the UI here
         runOnUiThread {
-            val adapter = MutatingCardsAdapter(this, cardsService.getStaticCards(), this)
+            val adapter = MutatingCardsAdapter(this, cardsService.getStaticCards(), this, "#7CFC00")
             staticCardsView.adapter = adapter
 
             val mainCardsAdapter = MutatingCardsAdapter(this, cardsService.getMainCards(), this)
