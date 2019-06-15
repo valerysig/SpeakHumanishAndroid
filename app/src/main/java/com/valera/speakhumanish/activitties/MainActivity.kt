@@ -47,15 +47,22 @@ class MainActivity : Activity(), IGridUpdater {
         setupCardsRecyclerView(selectedCardsView, 1)
         updateUI()
 
-        firstCardXPosition = mainCardsView.touchables[0].x
-
         // Hook up the buttons
         clearOneButton.setOnClickListener { Thread { clearOneButtonPressed() }.start() }
         clearAllButton.setOnClickListener { Thread { clearAllButtonPressed() }.start() }
         playAllButton.setOnClickListener { Thread { playAllButtonPressed() }.start() }
     }
 
+
+
     override fun updateGrid(cardId : Long, itemView : View) {
+        if (cardsService.getPressedCards().size >= 6) {
+            return
+        }
+
+        //TODO: VALERA Need to change that to a more robust solution
+        firstCardXPosition = staticCardsView.touchables[0].x
+
         val animator = getSetupAnimator(itemView, cardId)
 
         runOnUiThread {
