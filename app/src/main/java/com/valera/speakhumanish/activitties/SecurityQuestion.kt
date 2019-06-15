@@ -52,6 +52,7 @@ class SecurityQuestion : Activity() {
             addErrorMessage("Wrong answer")
         } else {
             startActivity(Intent(Supplier.childScreenActivity, ParentScreenActivity::class.java))
+            this.finish()
         }
     }
     private fun addErrorMessage(errorMessage : String) {

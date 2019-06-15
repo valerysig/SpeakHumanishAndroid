@@ -55,8 +55,6 @@ class ChildScreenActivity : Activity(), IGridUpdater {
         showParentScreenButton.setOnClickListener { Thread {showParentScreenButtonPressed() }.start() }
     }
 
-
-
     override fun updateGrid(cardId : Long, itemView : View) {
         if (cardsService.getPressedCards().size >= 6) {
             return
