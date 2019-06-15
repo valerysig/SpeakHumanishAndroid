@@ -21,10 +21,10 @@ import com.valera.speakhumanish.model.Supplier
 import com.valera.speakhumanish.services.ICardsService
 import com.valera.speakhumanish.services.IGridUpdater
 import com.valera.speakhumanish.utils.DaggerProductionComponent
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_child_screen.*
 import javax.inject.Inject
 
-class MainActivity : Activity(), IGridUpdater {
+class ChildScreenActivity : Activity(), IGridUpdater {
 
     @Inject
     lateinit var cardsService: ICardsService
@@ -34,8 +34,8 @@ class MainActivity : Activity(), IGridUpdater {
     override fun onCreate(savedInstanceState: Bundle?) {
         // Android init
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        Supplier.mainActivity = this
+        setContentView(R.layout.activity_child_screen)
+        Supplier.childScreenActivity = this
         Supplier.cardsWidth = Resources.getSystem().displayMetrics.widthPixels / 8
 
         // Injects all services

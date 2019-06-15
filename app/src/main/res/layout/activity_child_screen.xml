@@ -11,7 +11,7 @@
         android:columnCount="16"
         android:clipChildren="false"
         android:clipToPadding="false"
-        tools:context=".activitties.MainActivity">
+        tools:context=".activitties.ChildScreenActivity">
 
     <!-- User Configuration options grid -->
     <GridLayout

@@ -6,7 +6,7 @@ import android.media.MediaPlayer
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
-import com.valera.speakhumanish.activitties.MainActivity
+import com.valera.speakhumanish.activitties.ChildScreenActivity
 import com.valera.speakhumanish.model.Card
 import kotlinx.android.synthetic.main.card_item.view.*
 
@@ -55,6 +55,6 @@ open class CardsViewHolder(private val context: Context, itemView: View) :  Recy
     }
 
     protected open fun printLog() {
-        Log.i(MainActivity::class.java.simpleName, this.currentCard!!.label)
+        Log.i(ChildScreenActivity::class.java.simpleName, this.currentCard!!.label)
     }
 }

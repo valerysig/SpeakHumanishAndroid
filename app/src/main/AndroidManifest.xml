@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".activitties.MainActivity"
+        <activity android:name=".activitties.ChildScreenActivity"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
             <intent-filter>

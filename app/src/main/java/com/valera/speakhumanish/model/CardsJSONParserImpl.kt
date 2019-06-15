@@ -22,14 +22,14 @@ class CardsJSONParserImpl
 
         for (key in staticCards.keys) {
             val card = staticCards[key]!!
-            card.imageLocationID = Supplier.mainActivity.resources.getIdentifier(card.imageLocationStr, "drawable", Supplier.mainActivity.packageName)
-            card.soundLocationID = if (card.soundLocationStr.equals(""))  null else Supplier.mainActivity.resources.getIdentifier(card.soundLocationStr, "raw", Supplier.mainActivity.packageName)
+            card.imageLocationID = Supplier.childScreenActivity.resources.getIdentifier(card.imageLocationStr, "drawable", Supplier.childScreenActivity.packageName)
+            card.soundLocationID = if (card.soundLocationStr.equals(""))  null else Supplier.childScreenActivity.resources.getIdentifier(card.soundLocationStr, "raw", Supplier.childScreenActivity.packageName)
             card.id = key
         }
         for (key in mainCards.keys) {
             val card = mainCards[key]!!
-            card.imageLocationID = Supplier.mainActivity.resources.getIdentifier(card.imageLocationStr, "drawable", Supplier.mainActivity.packageName)
-            card.soundLocationID = if (card.soundLocationStr.equals(""))  null else Supplier.mainActivity.resources.getIdentifier(card.soundLocationStr, "raw", Supplier.mainActivity.packageName)
+            card.imageLocationID = Supplier.childScreenActivity.resources.getIdentifier(card.imageLocationStr, "drawable", Supplier.childScreenActivity.packageName)
+            card.soundLocationID = if (card.soundLocationStr.equals(""))  null else Supplier.childScreenActivity.resources.getIdentifier(card.soundLocationStr, "raw", Supplier.childScreenActivity.packageName)
             card.id = key
         }
 
@@ -76,7 +76,7 @@ class CardsJSONParserImpl
     private fun loadJSONFromAsset(fileName : String): String? {
         var json: String?
         try {
-            val fileStream = Supplier.mainActivity.assets.open(fileName)
+            val fileStream = Supplier.childScreenActivity.assets.open(fileName)
             val size = fileStream.available()
             val buffer = ByteArray(size)
             fileStream.read(buffer)
