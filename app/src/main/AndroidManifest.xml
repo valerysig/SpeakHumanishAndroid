@@ -19,6 +19,11 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activitties.ParentScreenActivity"
+                  android:screenOrientation="landscape">
+
+        </activity>
+
         <activity android:name=".activitties.SecurityQuestion"
                   android:theme="@style/AppTheme.PopupTheme">
         </activity>

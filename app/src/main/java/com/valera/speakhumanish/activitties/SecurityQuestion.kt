@@ -1,15 +1,16 @@
 package com.valera.speakhumanish.activitties
 import android.app.Activity
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.drawable.ShapeDrawable
 import android.graphics.drawable.shapes.RectShape
 import android.os.Bundle
-import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import com.valera.speakhumanish.R
+import com.valera.speakhumanish.model.Supplier
 import kotlinx.android.synthetic.main.activity_security_question.*
 import kotlin.random.Random
 
@@ -50,8 +51,7 @@ class SecurityQuestion : Activity() {
         else if (!(number1 + number2).equals(answer)) {
             addErrorMessage("Wrong answer")
         } else {
-            //TODO: Present the parent screen
-            Log.d("SecurityQuestion", "Right")
+            startActivity(Intent(Supplier.childScreenActivity, ParentScreenActivity::class.java))
         }
     }
     private fun addErrorMessage(errorMessage : String) {
