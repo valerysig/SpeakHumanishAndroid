@@ -23,7 +23,77 @@
             android:layout_columnWeight="3"
             android:layout_rowSpan="3"
             android:layout_columnSpan="3"
-            android:layout_gravity="fill">
+            android:layout_gravity="fill"
+            android:rowCount="6"
+            android:columnCount="3">
+
+        <Button
+                android:id="@+id/showParentScreenButton"
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:drawableTop="@drawable/configurations_icon"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <!-- Useless stuff -->>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="5"
+                android:layout_column="0"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
 
     </GridLayout>
 

@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.app.Activity
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Color
 import android.media.MediaPlayer
@@ -51,6 +52,7 @@ class MainActivity : Activity(), IGridUpdater {
         clearOneButton.setOnClickListener { Thread { clearOneButtonPressed() }.start() }
         clearAllButton.setOnClickListener { Thread { clearAllButtonPressed() }.start() }
         playAllButton.setOnClickListener { Thread { playAllButtonPressed() }.start() }
+        showParentScreenButton.setOnClickListener { Thread {showParentScreenButtonPressed() }.start() }
     }
 
 
@@ -113,6 +115,10 @@ class MainActivity : Activity(), IGridUpdater {
                 soundPlayer.start()
             }
         }
+    }
+
+    private fun showParentScreenButtonPressed() {
+        startActivity(Intent(this, SecurityQuestion::class.java))
     }
 
     private fun getSetupAnimator(itemView : View, cardId: Long) : AnimatorSet {
