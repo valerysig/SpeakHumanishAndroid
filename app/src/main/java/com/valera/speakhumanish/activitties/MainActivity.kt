@@ -28,6 +28,8 @@ class MainActivity : Activity(), IGridUpdater {
     @Inject
     lateinit var cardsService: ICardsService
 
+    private var firstCardXPosition : Float = 0f
+
     override fun onCreate(savedInstanceState: Bundle?) {
         // Android init
         super.onCreate(savedInstanceState)
@@ -45,6 +47,8 @@ class MainActivity : Activity(), IGridUpdater {
         setupCardsRecyclerView(selectedCardsView, 1)
         updateUI()
 
+        firstCardXPosition = mainCardsView.touchables[0].x
+
         // Hook up the buttons
         clearOneButton.setOnClickListener { Thread { clearOneButtonPressed() }.start() }
         clearAllButton.setOnClickListener { Thread { clearAllButtonPressed() }.start() }
@@ -52,8 +56,7 @@ class MainActivity : Activity(), IGridUpdater {
     }
 
     override fun updateGrid(cardId : Long, itemView : View) {
-        cardsService.updatePresentingCards(cardId)
-        val animator = getSetupAnimator(itemView)
+        val animator = getSetupAnimator(itemView, cardId)
 
         runOnUiThread {
             animator.start()
@@ -105,7 +108,7 @@ class MainActivity : Activity(), IGridUpdater {
         }
     }
 
-    private fun getSetupAnimator(itemView : View) : AnimatorSet {
+    private fun getSetupAnimator(itemView : View, cardId: Long) : AnimatorSet {
         val animationDuration = 1000L
 
         val moveDown = ObjectAnimator.ofFloat(itemView, "translationY", getYPoints(itemView))
@@ -121,6 +124,7 @@ class MainActivity : Activity(), IGridUpdater {
             }
 
             override fun onAnimationEnd(animation: Animator?) {
+                cardsService.updatePresentingCards(cardId)
                 itemView.elevation -= 2
                 updateUI()
             }
@@ -145,11 +149,13 @@ class MainActivity : Activity(), IGridUpdater {
 
     private fun getXPoints(itemView : View) : Float {
         val cardsInPlayBar = cardsService.getPressedCards().size
-        return - (itemView.width + (itemView as LinearLayout).paddingBottom*2) * cardsInPlayBar + (mainActivityView.width - itemView.x)
+        val itemWidth = itemView.width + (itemView as LinearLayout).paddingBottom*2
+
+        return firstCardXPosition - itemWidth * cardsInPlayBar - itemView.x
     }
 
     private fun getYPoints(itemView : View) : Float {
-        return playBarView.y - ((itemView as LinearLayout).parent as View).y - itemView.y + itemView.paddingBottom
+        return selectedCardsView.y - ((itemView as LinearLayout).parent as View).y - itemView.y + itemView.paddingBottom
     }
     //endregion
 }
