@@ -5,4 +5,6 @@
     <string name="answerTitle">Answer:</string>
     <string name="answer">Please enter the answer</string>
     <string name="submit">Submit</string>
+    <string name="static_cards">Static Cards</string>
+    <string name="main_cards">Main Cards</string>
 </resources>

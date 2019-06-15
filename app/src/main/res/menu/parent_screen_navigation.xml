@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    K<item android:id="@+id/nav_static_cards_editor"
+           android:icon="@drawable/static_cards_vector"
+           android:title="@string/static_cards"/>
+
+    <item android:id="@+id/nav_main_cards_editor"
+          android:icon="@drawable/main_cards_vector"
+          android:title="@string/main_cards"/>
+</menu>
