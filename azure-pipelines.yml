@@ -35,3 +35,5 @@ steps:
 #    publishJUnitResults: false
 #    testResultsFiles: '**/TEST-*.xml'
 #    tasks: 'test'
+  - publish: $(System.DefaultWorkingDirectory)/app/build/outputs/apk/release/app-release-unsigned.apk
+    artifact: SpeakHumanish
