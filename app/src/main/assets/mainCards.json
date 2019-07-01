@@ -1,82 +1,97 @@
 {
-  "cards": {
-    "1": {
-      "imageLocation": "where_to_go",
-      "soundLocation": "english_i_want",
-      "lable": "אני רוצה",
-      "possibleChildren": [ 2, 3, 4, 5 ]
-    },
-    "2": {
-      "imageLocation": "to_watch_tv",
-      "soundLocation": "",
-      "lable": "לשחק",
-      "possibleChildren": [ 6, 7 ]
-    },
-    "3": {
-      "imageLocation": "one_more_time",
-      "soundLocation": "",
-      "lable": "לקרוא ספר",
-      "possibleChildren": [ 8, 9 ]
-    },
-    "4": {
-      "imageLocation": "people",
-      "soundLocation": "",
-      "lable": "לאכול",
-      "possibleChildren": [ 10, 11 ]
-    },
-    "5": {
-      "imageLocation": "to_eat",
-      "soundLocation": "",
-      "lable": "ללכת",
-      "possibleChildren": [ 12, 13 ]
-    },
-    "6": {
-      "imageLocation": "to_play",
-      "soundLocation": "",
-      "lable": "כדורגל",
-      "possibleChildren": []
-    },
-    "7": {
-      "imageLocation": "ball",
-      "soundLocation": "",
-      "lable": "פלייסטיישן",
-      "possibleChildren": []
-    },
-    "8": {
-      "imageLocation": "baloon",
-      "soundLocation": "",
-      "lable": "אלכימאי",
-      "possibleChildren": []
-    },
-    "9": {
-      "imageLocation": "car",
-      "soundLocation": "",
-      "lable": "צופן דה וינצ'י",
-      "possibleChildren": []
-    },
-    "10": {
-      "imageLocation": "doll",
-      "soundLocation": "",
-      "lable": "שוקולד",
-      "possibleChildren": []
-    },
-    "11": {
-      "imageLocation": "doll",
-      "soundLocation": "",
-      "lable": "תפוז",
-      "possibleChildren": []
-    },
-    "12": {
-      "imageLocation": "doll",
-      "soundLocation": "",
-      "lable": "לבקר את סבתא",
-      "possibleChildren": []
-    },
-    "13": {
-      "imageLocation": "doll",
-      "soundLocation": "",
-      "lable": "לגן חיות",
-      "possibleChildren": []
-    }
+  "1": {
+    "imageLocation": "where_to_go",
+    "soundLocation": "english_i_want",
+    "label": "אני רוצה",
+    "possibleChildren": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "2": {
+    "imageLocation": "to_watch_tv",
+    "soundLocation": "",
+    "label": "לשחק",
+    "possibleChildren": [
+      6,
+      7
+    ]
+  },
+  "3": {
+    "imageLocation": "one_more_time",
+    "soundLocation": "",
+    "label": "לקרוא ספר",
+    "possibleChildren": [
+      8,
+      9
+    ]
+  },
+  "4": {
+    "imageLocation": "people",
+    "soundLocation": "",
+    "label": "לאכול",
+    "possibleChildren": [
+      10,
+      11
+    ]
+  },
+  "5": {
+    "imageLocation": "to_eat",
+    "soundLocation": "",
+    "label": "ללכת",
+    "possibleChildren": [
+      12,
+      13
+    ]
+  },
+  "6": {
+    "imageLocation": "to_play",
+    "soundLocation": "",
+    "label": "כדורגל",
+    "possibleChildren": []
+  },
+  "7": {
+    "imageLocation": "ball",
+    "soundLocation": "",
+    "label": "פלייסטיישן",
+    "possibleChildren": []
+  },
+  "8": {
+    "imageLocation": "baloon",
+    "soundLocation": "",
+    "label": "אלכימאי",
+    "possibleChildren": []
+  },
+  "9": {
+    "imageLocation": "car",
+    "soundLocation": "",
+    "label": "צופן דה וינצ'י",
+    "possibleChildren": []
+  },
+  "10": {
+    "imageLocation": "doll",
+    "soundLocation": "",
+    "label": "שוקולד",
+    "possibleChildren": []
+  },
+  "11": {
+    "imageLocation": "doll",
+    "soundLocation": "",
+    "label": "תפוז",
+    "possibleChildren": []
+  },
+  "12": {
+    "imageLocation": "doll",
+    "soundLocation": "",
+    "label": "לבקר את סבתא",
+    "possibleChildren": []
+  },
+  "13": {
+    "imageLocation": "doll",
+    "soundLocation": "",
+    "label": "לגן חיות",
+    "possibleChildren": []
   }
 }

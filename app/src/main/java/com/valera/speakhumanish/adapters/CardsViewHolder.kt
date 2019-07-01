@@ -6,7 +6,7 @@ import android.media.MediaPlayer
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
-import com.valera.speakhumanish.activitties.ChildScreenActivity
+import com.valera.speakhumanish.activities.ChildScreenActivity
 import com.valera.speakhumanish.model.Card
 import kotlinx.android.synthetic.main.card_item.view.*
 

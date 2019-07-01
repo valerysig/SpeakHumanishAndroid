@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".activitties.ChildScreenActivity"
+        <activity android:name=".activities.ChildScreenActivity"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
             <intent-filter>
@@ -19,12 +19,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activitties.ParentScreenActivity"
+        <activity android:name=".activities.ParentScreenActivity"
                   android:screenOrientation="landscape">
 
         </activity>
 
-        <activity android:name=".activitties.SecurityQuestion"
+        <activity android:name=".activities.SecurityQuestion"
                   android:theme="@style/AppTheme.PopupTheme">
         </activity>
     </application>

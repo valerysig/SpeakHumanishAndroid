@@ -1,4 +1,4 @@
-package com.valera.speakhumanish.activitties
+package com.valera.speakhumanish.activities
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView

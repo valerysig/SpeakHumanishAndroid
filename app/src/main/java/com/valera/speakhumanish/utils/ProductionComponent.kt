@@ -1,6 +1,6 @@
 package com.valera.speakhumanish.utils
 
-import com.valera.speakhumanish.activitties.ChildScreenActivity
+import com.valera.speakhumanish.activities.ChildScreenActivity
 import com.valera.speakhumanish.model.ModelProductionModule
 import com.valera.speakhumanish.services.ServicesProductionModule
 import dagger.Component

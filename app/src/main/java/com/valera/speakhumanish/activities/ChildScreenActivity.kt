@@ -1,4 +1,4 @@
-package com.valera.speakhumanish.activitties
+package com.valera.speakhumanish.activities
 
 import android.animation.Animator
 import android.animation.AnimatorSet

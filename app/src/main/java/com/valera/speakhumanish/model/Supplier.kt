@@ -1,6 +1,6 @@
 package com.valera.speakhumanish.model
 
-import com.valera.speakhumanish.activitties.ChildScreenActivity
+import com.valera.speakhumanish.activities.ChildScreenActivity
 
 object Supplier {
     lateinit var childScreenActivity : ChildScreenActivity

@@ -1,4 +1,4 @@
-package com.valera.speakhumanish.activitties
+package com.valera.speakhumanish.activities
 import android.app.Activity
 import android.content.Intent
 import android.content.res.Resources

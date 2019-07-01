@@ -4,7 +4,7 @@
                 android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:orientation="vertical"
                 xmlns:tools="http://schemas.android.com/tools"
-                tools:context=".activitties.ParentScreenActivity">
+                tools:context=".activities.ParentScreenActivity">
     <android.support.design.widget.BottomNavigationView android:id="@+id/parent_screen_navigation"
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
