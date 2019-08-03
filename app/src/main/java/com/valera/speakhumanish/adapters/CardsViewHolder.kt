@@ -3,7 +3,6 @@ package com.valera.speakhumanish.adapters
 import android.content.Context
 import android.graphics.PorterDuff
 import android.media.MediaPlayer
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import com.valera.speakhumanish.activities.ChildScreenActivity
@@ -11,7 +10,7 @@ import com.valera.speakhumanish.model.Card
 import kotlinx.android.synthetic.main.card_item.view.*
 
 
-open class CardsViewHolder(private val context: Context, itemView: View) :  RecyclerView.ViewHolder(itemView) {
+open class CardsViewHolder(private val context: Context, itemView: View) :  androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
     var currentCard : Card? = null
     private var pos: Int = 0
 

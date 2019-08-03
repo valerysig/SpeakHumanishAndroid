@@ -9,11 +9,9 @@ import android.content.res.Resources
 import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.valera.speakhumanish.R
 import com.valera.speakhumanish.adapters.CardsAdapter
 import com.valera.speakhumanish.adapters.MutatingCardsAdapter
@@ -71,9 +69,9 @@ class ChildScreenActivity : Activity(), IGridUpdater {
     }
 
     //region Private Methods
-    private fun setupCardsRecyclerView(view: RecyclerView, columnCount : Int, backgroudColor: String? = null) {
-        val layoutManager = GridLayoutManager(this, columnCount)
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+    private fun setupCardsRecyclerView(view: androidx.recyclerview.widget.RecyclerView, columnCount : Int, backgroudColor: String? = null) {
+        val layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, columnCount)
+        layoutManager.orientation = androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
 
         view.layoutManager = layoutManager
         view.layoutDirection = View.LAYOUT_DIRECTION_RTL
@@ -146,7 +144,7 @@ class ChildScreenActivity : Activity(), IGridUpdater {
 
             override fun onAnimationStart(animation: Animator?) {
                 // Bring the recycler views to front
-                (itemView.parent as RecyclerView).bringToFront()
+                (itemView.parent as androidx.recyclerview.widget.RecyclerView).bringToFront()
 
                 // Bring the cards to front
                 itemView.elevation += 2

@@ -98,7 +98,7 @@
     </GridLayout>
 
     <!-- Static cards recycler view -->
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/staticCardsView"
             android:layout_height="0dp"
             android:layout_width="0dp"
@@ -110,7 +110,7 @@
             android:layout_gravity="fill"/>
 
     <!-- Main cards recycler view -->
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mainCardsView"
             android:layout_height="0dp"
             android:layout_width="0dp"
@@ -123,7 +123,7 @@
             android:layout_gravity="fill"/>
 
     <!-- Selected cards recycler view -->
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/selectedCardsView"
             android:layout_height="0dp"
             android:layout_width="0dp"
