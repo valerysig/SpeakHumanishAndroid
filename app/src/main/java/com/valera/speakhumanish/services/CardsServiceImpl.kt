@@ -3,11 +3,12 @@ package com.valera.speakhumanish.services
 import com.valera.speakhumanish.model.Card
 import com.valera.speakhumanish.model.ICardsParser
 import javax.inject.Inject
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Singleton
 class CardsServiceImpl
-    @Inject constructor(private val cardsParser: ICardsParser) : ICardsService {
+    @Inject constructor(@Named("DBCardParser") private val cardsParser: ICardsParser) : ICardsService {
 
     //region Members
     private val allCards : Map<Long, Card>
