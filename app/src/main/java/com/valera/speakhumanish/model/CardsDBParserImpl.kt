@@ -1,14 +1,21 @@
 package com.valera.speakhumanish.model
 
+import com.valera.speakhumanish.dao.AppDatabase
 import javax.inject.Inject
 import javax.inject.Named
 
 class CardsDBParserImpl
-    @Inject constructor() : ICardsParser{
+    @Inject constructor(@Named("JSONCardParser") var parser: ICardsParser) : ICardsParser{
 
-    @Inject
-    @field:Named("JSONCardParser")
-    lateinit var parser: ICardsParser
+    private val mdb : AppDatabase
+
+    init {
+        //Init the DB here
+        mdb = AppDatabase.getFileDatabase(Supplier.childScreenActivity)
+        mdb.cardsModel().insertCard(parser.getAllAvailableCards().values.toList())
+
+        var cards = mdb.cardsModel().getAllCards()
+    }
 
     override fun getStaticCards(): List<Card> {
         return parser.getStaticCards()
