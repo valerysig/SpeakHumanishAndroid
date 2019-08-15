@@ -1,6 +1,6 @@
 package com.valera.speakhumanish.services
 
-import com.valera.speakhumanish.model.Card
+import com.valera.speakhumanish.model.CardTO
 import com.valera.speakhumanish.model.ICardsParser
 import javax.inject.Inject
 import javax.inject.Named
@@ -11,11 +11,11 @@ class CardsServiceImpl
     @Inject constructor(@Named("DBCardParser") private val cardsParser: ICardsParser) : ICardsService {
 
     //region Members
-    private val allCards : Map<Long, Card>
-    private val staticCards : List<Card>
-    private var mainCards : List<Card>
-    private var pressedCards : MutableList<Card>
-    private var previousCardsStack : MutableList<List<Card>>
+    private val allCards : Map<Long, CardTO>
+    private val staticCards : List<CardTO>
+    private var mainCards : List<CardTO>
+    private var pressedCards : MutableList<CardTO>
+    private var previousCardsStack : MutableList<List<CardTO>>
     //endregion
 
     init {
@@ -35,15 +35,15 @@ class CardsServiceImpl
         previousCardsStack.clear()
     }
 
-    override fun getStaticCards(): List<Card> {
+    override fun getStaticCards(): List<CardTO> {
         return this.staticCards
     }
 
-    override fun getMainCards(): List<Card> {
+    override fun getMainCards(): List<CardTO> {
         return this.mainCards
     }
 
-    override fun getPressedCards(): List<Card> {
+    override fun getPressedCards(): List<CardTO> {
         return this.pressedCards
     }
 

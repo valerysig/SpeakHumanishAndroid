@@ -6,12 +6,12 @@ import android.media.MediaPlayer
 import android.util.Log
 import android.view.View
 import com.valera.speakhumanish.activities.ChildScreenActivity
-import com.valera.speakhumanish.model.Card
+import com.valera.speakhumanish.model.CardTO
 import kotlinx.android.synthetic.main.card_item.view.*
 
 
 open class CardsViewHolder(private val context: Context, itemView: View) :  androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
-    var currentCard : Card? = null
+    var currentCard : CardTO? = null
     private var pos: Int = 0
 
     init {
@@ -31,7 +31,7 @@ open class CardsViewHolder(private val context: Context, itemView: View) :  andr
         }
     }
 
-    fun setData(card: Card?, position: Int) {
+    fun setData(card: CardTO?, position: Int) {
         card?.let {
             this.itemView.imgShare.setImageResource(card.imageLocationID)
             this.itemView.txvTitle.text = card.label
