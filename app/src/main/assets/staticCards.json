@@ -3,31 +3,36 @@
     "imageLocation": "ball",
     "soundLocation": "",
     "label": "Some text 1212121",
-    "possibleChildren": null
+    "possibleChildren": null,
+    "isInitialCard" : false
   },
   "101": {
     "imageLocation": "baloon",
     "soundLocation": "",
     "label": "Some text 1212121",
-    "possibleChildren": null
+    "possibleChildren": null,
+    "isInitialCard" : false
   },
   "102": {
     "imageLocation": "car",
     "soundLocation": "",
     "label": "Some text 1212121",
-    "possibleChildren": null
+    "possibleChildren": null,
+    "isInitialCard" : false
   },
   "103": {
     "imageLocation": "doll",
     "soundLocation": "",
     "label": "Some text 1212121",
-    "possibleChildren": null
+    "possibleChildren": null,
+    "isInitialCard" : false
   },
   "104": {
     "imageLocation": "enough",
     "soundLocation": "",
     "label": "Some text 1212121",
-    "possibleChildren": null
+    "possibleChildren": null,
+    "isInitialCard" : false
   }
 }
 

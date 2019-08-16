@@ -20,7 +20,13 @@ class CardsJSONParserImpl
             val turnsType = object : TypeToken<Map<Long, CardTO>>() {}.type
             val jsonString = loadJSONFromAsset(fileName)
 
-            return GSON.fromJson<Map<Long, CardTO>>(jsonString, turnsType)
+            val cardsMap = GSON.fromJson<Map<Long, CardTO>>(jsonString, turnsType)
+
+            for ((key, card) in cardsMap) {
+                card.id = key
+            }
+
+            return cardsMap
         }
 
         private fun loadJSONFromAsset(fileName: String): String? {
@@ -45,14 +51,6 @@ class CardsJSONParserImpl
         staticCards = loadJSONToObject(STATIC_CARDS_ASSET_NAME) ?: HashMap()
         val mainCards = loadJSONToObject(MAIN_CARDS_ASSET_NAME) ?: HashMap()
 
-        // TODO: change this to GSON deserialization step?
-        for ((key, card) in staticCards) {
-            card.id = key
-        }
-        for ((key, card) in mainCards) {
-            card.id = key
-        }
-
         val mutableCardsMap: MutableMap<Long, CardTO> = HashMap()
         mutableCardsMap.putAll(staticCards)
         mutableCardsMap.putAll(mainCards)
@@ -65,9 +63,9 @@ class CardsJSONParserImpl
     }
 
     override fun getInitialMainCards(): List<CardTO> {
-        val initialCards: List<CardTO> = INITIAL_CARDS_INDICES.mapNotNull { allCards[it] }
+        val initialCards: List<CardTO> = allCards.values.filter { it.isInitialCard }.toList()
         if (initialCards.isEmpty()) {
-            Log.e(CardsJSONParserImpl::class.java.name, "There was no initiating card")
+            Log.e(CardsJSONParserImpl::class.java.name, "There were no initial cards")
         }
         return initialCards
     }

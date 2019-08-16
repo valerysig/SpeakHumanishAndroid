@@ -11,13 +11,15 @@ data class CardTO (
     val label: String,
     val imageLocation: String,
     val soundLocation: String? = null,
-    val possibleChildren: Set<Long>? = HashSet()) {
+    val possibleChildren: Set<Long>? = HashSet(),
+    val isInitialCard : Boolean) {
 
     constructor(card : Card) : this(card.id,
         card.label,
         card.imageLocation,
         card.soundLocation,
-        card.possibleChildren?.splitNumbers(","))
+        card.possibleChildren?.splitNumbers(","),
+        card.isInitialCard)
 
     val imageLocationID : Int
         get() {

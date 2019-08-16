@@ -8,7 +8,8 @@
       3,
       4,
       5
-    ]
+    ],
+    "isInitialCard" : true
   },
   "2": {
     "imageLocation": "to_watch_tv",
@@ -17,7 +18,8 @@
     "possibleChildren": [
       6,
       7
-    ]
+    ],
+    "isInitialCard" : false
   },
   "3": {
     "imageLocation": "one_more_time",
@@ -26,7 +28,8 @@
     "possibleChildren": [
       8,
       9
-    ]
+    ],
+    "isInitialCard" : false
   },
   "4": {
     "imageLocation": "people",
@@ -35,7 +38,8 @@
     "possibleChildren": [
       10,
       11
-    ]
+    ],
+    "isInitialCard" : false
   },
   "5": {
     "imageLocation": "to_eat",
@@ -44,54 +48,63 @@
     "possibleChildren": [
       12,
       13
-    ]
+    ],
+    "isInitialCard" : false
   },
   "6": {
     "imageLocation": "to_play",
     "soundLocation": "",
     "label": "כדורגל",
-    "possibleChildren": []
+    "possibleChildren": [],
+    "isInitialCard" : false
   },
   "7": {
     "imageLocation": "ball",
     "soundLocation": "",
     "label": "פלייסטיישן",
-    "possibleChildren": []
+    "possibleChildren": [],
+    "isInitialCard" : false
   },
   "8": {
     "imageLocation": "baloon",
     "soundLocation": "",
     "label": "אלכימאי",
-    "possibleChildren": []
+    "possibleChildren": [],
+    "isInitialCard" : false
   },
   "9": {
     "imageLocation": "car",
     "soundLocation": "",
     "label": "צופן דה וינצ'י",
-    "possibleChildren": []
+    "possibleChildren": [],
+    "isInitialCard" : false
   },
   "10": {
     "imageLocation": "doll",
     "soundLocation": "",
     "label": "שוקולד",
-    "possibleChildren": []
+    "possibleChildren": [],
+    "isInitialCard" : false
   },
   "11": {
     "imageLocation": "doll",
     "soundLocation": "",
     "label": "תפוז",
-    "possibleChildren": []
+    "possibleChildren": [],
+    "isInitialCard" : false
   },
   "12": {
     "imageLocation": "doll",
     "soundLocation": "",
     "label": "לבקר את סבתא",
-    "possibleChildren": []
+    "possibleChildren": [],
+    "isInitialCard" : false
   },
   "13": {
     "imageLocation": "doll",
     "soundLocation": "",
     "label": "לגן חיות",
-    "possibleChildren": []
+    "possibleChildren": [],
+    "isInitialCard" : false
   }
 }
