@@ -21,19 +21,19 @@ data class CardTO (
 
     val imageLocationID : Int
         get() {
-            return Supplier.childScreenActivity.resources.getIdentifier(
+            return Supplier.contextActivity.resources.getIdentifier(
                 this.imageLocation,
                 "drawable",
-                Supplier.childScreenActivity.packageName
+                Supplier.contextActivity.packageName
             )
         }
 
     val soundLocationID : Int?
         get() {
-            return if (this.soundLocation.equals("")) null else Supplier.childScreenActivity.resources.getIdentifier(
+            return if (this.soundLocation.equals("")) null else Supplier.contextActivity.resources.getIdentifier(
                 this.soundLocation,
                 "raw",
-                Supplier.childScreenActivity.packageName
+                Supplier.contextActivity.packageName
             )
         }
 }

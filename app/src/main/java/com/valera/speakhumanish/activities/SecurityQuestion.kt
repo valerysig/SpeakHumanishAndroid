@@ -51,7 +51,7 @@ class SecurityQuestion : Activity() {
         else if (!(number1 + number2).equals(answer)) {
             addErrorMessage("Wrong answer")
         } else {
-            startActivity(Intent(Supplier.childScreenActivity, ParentScreenActivity::class.java))
+            startActivity(Intent(Supplier.contextActivity, ParentScreenActivity::class.java))
             this.finish()
         }
     }

@@ -25,7 +25,7 @@ class CardsJSONParserImpl
 
         private fun loadJSONFromAsset(fileName: String): String? {
             return try {
-                val fileStream = Supplier.childScreenActivity.assets.open(fileName)
+                val fileStream = Supplier.contextActivity.assets.open(fileName)
                 val size = fileStream.available()
                 val buffer = ByteArray(size)
                 fileStream.read(buffer)

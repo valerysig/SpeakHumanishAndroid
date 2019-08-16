@@ -14,7 +14,7 @@ class CardsDBParserImpl
 
     init {
         AppDatabase.destroyInstance()
-        mdb = AppDatabase.getFileDatabase(Supplier.childScreenActivity)
+        mdb = AppDatabase.getFileDatabase(Supplier.contextActivity)
         val initDBThread = Thread { initDB() }
         initDBThread.start()
 

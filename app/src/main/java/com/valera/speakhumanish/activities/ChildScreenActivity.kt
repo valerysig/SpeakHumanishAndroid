@@ -32,7 +32,7 @@ class ChildScreenActivity : Activity(), IGridUpdater {
         // Android init
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_child_screen)
-        Supplier.childScreenActivity = this
+        Supplier.contextActivity = this
         Supplier.cardsWidth = Resources.getSystem().displayMetrics.widthPixels / 8
 
         // Injects all services
