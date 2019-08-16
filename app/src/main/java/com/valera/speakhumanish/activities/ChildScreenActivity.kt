@@ -11,14 +11,13 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.valera.speakhumanish.R
 import com.valera.speakhumanish.adapters.CardsAdapter
 import com.valera.speakhumanish.adapters.MutatingCardsAdapter
+import com.valera.speakhumanish.common.DaggerProductionComponent
 import com.valera.speakhumanish.model.Supplier
 import com.valera.speakhumanish.services.ICardsService
 import com.valera.speakhumanish.services.IGridUpdater
-import com.valera.speakhumanish.utils.DaggerProductionComponent
 import kotlinx.android.synthetic.main.activity_child_screen.*
 import javax.inject.Inject
 

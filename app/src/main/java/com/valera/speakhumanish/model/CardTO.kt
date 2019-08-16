@@ -1,5 +1,7 @@
 package com.valera.speakhumanish.model
 
+import com.valera.speakhumanish.common.splitNumbers
+
 //TODO: Later on make the soundLocationID not an optional
 /**
  * possibleChildren - If the property is null then the card is a static card
@@ -11,13 +13,28 @@ data class CardTO (
     val soundLocation: String? = null,
     val possibleChildren: Set<Long>? = HashSet()) {
 
-    var imageLocationID : Int = 0
-    var soundLocationID : Int? = null
-
     constructor(card : Card) : this(card.id,
         card.label,
         card.imageLocation,
         card.soundLocation,
-        card.possibleChildren?.split(",")?.map { t -> t.toLong() }?.toSet())
+        card.possibleChildren?.splitNumbers(","))
+
+    val imageLocationID : Int
+        get() {
+            return Supplier.childScreenActivity.resources.getIdentifier(
+                this.imageLocation,
+                "drawable",
+                Supplier.childScreenActivity.packageName
+            )
+        }
+
+    val soundLocationID : Int?
+        get() {
+            return if (this.soundLocation.equals("")) null else Supplier.childScreenActivity.resources.getIdentifier(
+                this.soundLocation,
+                "raw",
+                Supplier.childScreenActivity.packageName
+            )
+        }
 }
 

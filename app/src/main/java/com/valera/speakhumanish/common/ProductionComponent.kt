@@ -1,4 +1,4 @@
-package com.valera.speakhumanish.utils
+package com.valera.speakhumanish.common
 
 import com.valera.speakhumanish.activities.ChildScreenActivity
 import com.valera.speakhumanish.model.ModelProductionModule

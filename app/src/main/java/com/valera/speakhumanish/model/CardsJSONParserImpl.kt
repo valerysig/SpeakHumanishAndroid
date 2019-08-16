@@ -47,31 +47,9 @@ class CardsJSONParserImpl
 
         // TODO: change this to GSON deserialization step?
         for ((key, card) in staticCards) {
-            card.imageLocationID = Supplier.childScreenActivity.resources.getIdentifier(
-                card.imageLocation,
-                "drawable",
-                Supplier.childScreenActivity.packageName
-            )
-            card.soundLocationID =
-                if (card.soundLocation.equals("")) null else Supplier.childScreenActivity.resources.getIdentifier(
-                    card.soundLocation,
-                    "raw",
-                    Supplier.childScreenActivity.packageName
-                )
             card.id = key
         }
         for ((key, card) in mainCards) {
-            card.imageLocationID = Supplier.childScreenActivity.resources.getIdentifier(
-                card.imageLocation,
-                "drawable",
-                Supplier.childScreenActivity.packageName
-            )
-            card.soundLocationID =
-                if (card.soundLocation.equals("")) null else Supplier.childScreenActivity.resources.getIdentifier(
-                    card.soundLocation,
-                    "raw",
-                    Supplier.childScreenActivity.packageName
-                )
             card.id = key
         }
 
@@ -97,7 +75,5 @@ class CardsJSONParserImpl
     override fun getAllAvailableCards(): Map<Long, CardTO> {
         return allCards
     }
-
-    // resources.getIdentifier("ball", "drawable", packageName)
     //endregion
 }
