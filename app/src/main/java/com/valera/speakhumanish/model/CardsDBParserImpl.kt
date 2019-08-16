@@ -32,8 +32,13 @@ class CardsDBParserImpl
     }
 
     override fun getInitialMainCards(): List<CardTO> {
-        //TODO: return the cards from the member
-        return parser.getInitialMainCards()
+        var initialCards : List<CardTO> = ArrayList()
+        val dbThread = Thread {
+            initialCards = mdb.cardsModel().getInitialCards().map { CardTO(it) }.toList()
+        }
+        dbThread.start()
+        dbThread.join()
+        return initialCards
     }
 
     override fun getAllAvailableCards(): Map<Long, CardTO> {

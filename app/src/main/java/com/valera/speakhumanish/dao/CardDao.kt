@@ -12,6 +12,9 @@ interface CardDao {
     @Query("select * from Cards where possible_children is null")
     fun getStaticCards() : List<Card>
 
+    @Query("select * from Cards where initial_card = 1")
+    fun getInitialCards() : List<Card>
+
     @Query("select * from Cards where id = :id")
     fun getCardById(id : Long) : List<Card>
 

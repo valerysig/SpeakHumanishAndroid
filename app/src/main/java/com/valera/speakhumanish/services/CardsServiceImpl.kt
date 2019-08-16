@@ -19,7 +19,6 @@ class CardsServiceImpl
     //endregion
 
     init {
-        //TODO: After the JSON parsing class is done remove the following 3 lines
         allCards = cardsParser.getAllAvailableCards()
         staticCards = cardsParser.getStaticCards()
         mainCards = cardsParser.getInitialMainCards()
