@@ -22,12 +22,13 @@ class CardsDBParserImpl
     }
 
     override fun getStaticCards(): List<CardTO> {
-//        var cards : List<CardTO> = ArrayList()
-//        val dbThread = Thread {
-//            cards = mdb.cardsModel()
-//        }
-        //TODO: return the cards from the member
-        return parser.getStaticCards()
+        var cards : List<CardTO> = ArrayList()
+        val dbThread = Thread {
+            cards = mdb.cardsModel().getStaticCards().map { CardTO(it) }.toList()
+        }
+        dbThread.start()
+        dbThread.join()
+        return cards
     }
 
     override fun getInitialMainCards(): List<CardTO> {
