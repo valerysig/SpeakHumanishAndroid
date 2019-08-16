@@ -10,10 +10,9 @@ class CardsJSONParserImpl
 @Inject constructor() : ICardsParser {
 
     companion object StaticValues {
-        const val CLASS_NAME = "CardsJSONParserImpl"
-        const val STATIC_CARDS_ASSET_NAME = "staticCards.json"
-        const val MAIN_CARDS_ASSET_NAME = "mainCards.json"
-        val INITIAL_CARDS_INDICES = listOf(1L)
+        private const val STATIC_CARDS_ASSET_NAME = "staticCards.json"
+        private const val MAIN_CARDS_ASSET_NAME = "mainCards.json"
+
         private val GSON = Gson()
 
         private fun loadJSONToObject(fileName: String): Map<Long, CardTO>? {
@@ -30,16 +29,17 @@ class CardsJSONParserImpl
         }
 
         private fun loadJSONFromAsset(fileName: String): String? {
-            return try {
-                val fileStream = Supplier.contextActivity.assets.open(fileName)
-                val size = fileStream.available()
-                val buffer = ByteArray(size)
-                fileStream.read(buffer)
-                fileStream.close()
-                String(buffer)
-            } catch (ex: IOException) {
-                Log.e(CardsJSONParserImpl::class.java.name, "Error parsing the JSON file: $fileName", ex)
-                null
+            val fileStream = Supplier.contextActivity.assets.open(fileName)
+            fileStream.use {
+                return try {
+                    val size = fileStream.available()
+                    val buffer = ByteArray(size)
+                    fileStream.read(buffer)
+                    String(buffer)
+                } catch (ex: IOException) {
+                    Log.e(CardsJSONParserImpl::class.java.name, "Error parsing the JSON file: $fileName", ex)
+                    null
+                }
             }
         }
     }
