@@ -7,4 +7,5 @@
     <string name="submit">Submit</string>
     <string name="static_cards">Static Cards</string>
     <string name="main_cards">Main Cards</string>
+    <string name="current_screen_parent_image">Will contain the current card in question for editing</string>
 </resources>

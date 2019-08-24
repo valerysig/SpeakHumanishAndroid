@@ -20,10 +20,12 @@ import com.valera.speakhumanish.services.ICardsService
 import com.valera.speakhumanish.services.IGridUpdater
 import kotlinx.android.synthetic.main.activity_child_screen.*
 import javax.inject.Inject
+import javax.inject.Named
 
 class ChildScreenActivity : Activity(), IGridUpdater {
 
     @Inject
+    @field:Named("childCardService")
     lateinit var cardsService: ICardsService
 
     private var firstCardXPosition : Float = 0f

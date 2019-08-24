@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:rowCount="16"
+        android:columnCount="3"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+    <!-- First Row -->
+    <ImageView
+            android:id="@+id/imgShare"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="3"
+            android:layout_rowSpan="3"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:src="@drawable/ball"
+            android:contentDescription="@string/current_screen_parent_image"/>
+    <TextView
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="3"
+            android:layout_rowSpan="3"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"/>
+    <TextView
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="3"
+            android:layout_rowSpan="3"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"/>
+    <!-- Second Row -->
+    <TextView
+            android:id="@+id/txvTitle"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="3"
+            android:layout_columnSpan="3"
+            android:layout_gravity="fill"
+            android:text=""
+            android:textColor="#616161"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="5sp"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeStepGranularity="2sp"
+            android:textStyle="bold"/>
+    <!-- Bottom Row -->
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nextCards"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="4"
+            android:layout_rowWeight="12"
+            android:layout_rowSpan="12"
+            android:layout_column="0"
+            android:layout_columnWeight="3"
+            android:layout_columnSpan="3"
+            android:layout_gravity="fill"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</GridLayout>
