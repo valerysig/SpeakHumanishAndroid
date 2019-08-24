@@ -1,5 +1,6 @@
 package com.valera.speakhumanish.services
 
+import android.util.Log
 import com.valera.speakhumanish.model.CardTO
 import com.valera.speakhumanish.model.ICardsParser
 import javax.inject.Inject
@@ -24,6 +25,15 @@ class CardsServiceImpl
         mainCards = cardsParser.getInitialMainCards()
         pressedCards = mutableListOf()
         previousCardsStack = mutableListOf()
+    }
+
+    override fun getCard(cardId: Long): CardTO {
+        allCards[cardId]?.let {
+            return it
+        }
+
+        Log.e("CardsServiceImpl", "The card with the ID: $cardId doesn't exist")
+        throw RuntimeException("Card not found")
     }
 
     override fun clear() {

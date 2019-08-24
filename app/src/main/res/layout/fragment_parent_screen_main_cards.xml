@@ -9,8 +9,77 @@
         android:clipChildren="false"
         android:clipToPadding="false">
     <!-- First Row -->
+    <GridLayout
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="3"
+            android:layout_rowSpan="3"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+
+            android:orientation="vertical"
+            android:rowCount="2"
+            android:columnCount="3"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+        <Button
+                android:id="@+id/parentScreenBackBtn"
+                android:text="C"
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <Button
+                android:id="@+id/parentScreenClearAllBtn"
+                android:text="CA"
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+        <TextView
+                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"/>
+
+    </GridLayout>
     <ImageView
-            android:id="@+id/imgShare"
+            android:id="@+id/currentParentImage"
             android:layout_height="0dp"
             android:layout_width="0dp"
             android:layout_row="0"
@@ -19,17 +88,8 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:src="@drawable/ball"
+            android:src="@drawable/home_image"
             android:contentDescription="@string/current_screen_parent_image"/>
-    <TextView
-            android:layout_height="0dp"
-            android:layout_width="0dp"
-            android:layout_row="0"
-            android:layout_rowWeight="3"
-            android:layout_rowSpan="3"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"/>
     <TextView
             android:layout_height="0dp"
             android:layout_width="0dp"
@@ -41,7 +101,7 @@
             android:layout_gravity="fill"/>
     <!-- Second Row -->
     <TextView
-            android:id="@+id/txvTitle"
+            android:id="@+id/currentParentText"
             android:layout_height="0dp"
             android:layout_width="0dp"
             android:layout_row="3"
@@ -50,7 +110,8 @@
             android:layout_columnWeight="3"
             android:layout_columnSpan="3"
             android:layout_gravity="fill"
-            android:text=""
+            android:text="@string/home_screen"
+            android:gravity="center"
             android:textColor="#616161"
             app:autoSizeTextType="uniform"
             app:autoSizeMinTextSize="5sp"

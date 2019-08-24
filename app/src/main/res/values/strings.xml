@@ -8,4 +8,6 @@
     <string name="static_cards">Static Cards</string>
     <string name="main_cards">Main Cards</string>
     <string name="current_screen_parent_image">Will contain the current card in question for editing</string>
+    <string name="home_screen">Home Screen</string>
+    <string name="card_image_description">The image of the card</string>
 </resources>
