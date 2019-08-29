@@ -51,6 +51,7 @@ class ParentScreenMainCardsFragment : Fragment(), IGridUpdater {
         //Init the buttons
         parentScreenBackBtn.setOnClickListener { Thread { backBtnPressed() }.start() }
         parentScreenClearAllBtn.setOnClickListener { Thread {clearAllBtnPressed() }.start() }
+        addNewCardBtn.setOnClickListener { Thread {addNewCardBtnPressed() }.start() }
 
         updateUI()
     }
@@ -69,6 +70,10 @@ class ParentScreenMainCardsFragment : Fragment(), IGridUpdater {
     }
 
     private fun clearAllBtnPressed() {
+
+    }
+
+    private fun addNewCardBtnPressed() {
 
     }
 

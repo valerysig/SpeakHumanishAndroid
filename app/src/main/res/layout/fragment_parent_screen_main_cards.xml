@@ -90,7 +90,7 @@
             android:layout_gravity="fill"
             android:src="@drawable/home_image"
             android:contentDescription="@string/current_screen_parent_image"/>
-    <TextView
+    <GridLayout
             android:layout_height="0dp"
             android:layout_width="0dp"
             android:layout_row="0"
@@ -98,7 +98,65 @@
             android:layout_rowSpan="3"
             android:layout_column="2"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+
+            android:orientation="vertical"
+            android:rowCount="2"
+            android:columnCount="3"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+        <TextView
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
             android:layout_gravity="fill"/>
+        <TextView
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"/>
+        <ImageButton
+            android:src="@drawable/plus_button"
+            android:id="@+id/addNewCardBtn"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"/>
+        <TextView
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"/>
+        <TextView
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"/>
+    </GridLayout>
     <!-- Second Row -->
     <TextView
             android:id="@+id/currentParentText"
