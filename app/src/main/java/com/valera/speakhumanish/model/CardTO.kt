@@ -38,5 +38,10 @@ data class CardTO (
                 Supplier.contextActivity.packageName
             )
         }
+
+    val isStaticCard : Boolean
+        get() {
+            return possibleChildren == null
+        }
 }
 

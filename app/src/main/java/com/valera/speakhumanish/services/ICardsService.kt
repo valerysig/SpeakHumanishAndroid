@@ -8,6 +8,7 @@ interface ICardsService {
 
     fun getCard(cardId : Long) : CardTO
     fun getStaticCards(): List<CardTO>
+    fun getRegularCards() : List<CardTO>
     fun getMainCards(): List<CardTO>
     fun getPressedCards() : List<CardTO>
     fun updatePresentingCards(selectedCardId: Long)

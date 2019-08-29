@@ -58,39 +58,25 @@ class ParentScreenMainCardsFragment : Fragment(), IGridUpdater {
 
     //region Methods
     override fun updateGrid(cardId: Long, itemView: View) {
-        cardsService.updatePresentingCards(cardId)
-
-        updateUI()
+        //TODO: Present the pop up here
     }
     //endregion
 
     //region Private Methods
     private fun backBtnPressed() {
-        cardsService.backOneLevel()
 
-        updateUI()
     }
 
     private fun clearAllBtnPressed() {
-        cardsService.clear()
 
-        updateUI()
     }
 
     private fun updateUI() {
         activity?.runOnUiThread {
-            val currentCard = cardsService.lastPressedCard
-            if (currentCard == null) {
-                currentParentImage.setImageResource(INITAL_IMAGE)
-                currentParentText.text = INIAL_TEXT
-            } else {
-                // Setting the current image on the screen
-                currentParentImage.setImageResource(currentCard.imageLocationID)
-                currentParentText.text = currentCard.label
-            }
+            currentParentImage.setImageResource(INITAL_IMAGE)
+            currentParentText.text = INIAL_TEXT
 
-
-            val adapter = MutatingCardsAdapter(activity!!, cardsService.getMainCards(), this)
+            val adapter = MutatingCardsAdapter(activity!!, cardsService.getRegularCards(), this)
             nextCards.adapter = adapter
         }
     }

@@ -31,6 +31,16 @@ class CardsDBParserImpl
         return cards
     }
 
+    override fun getRegularCards(): List<CardTO> {
+        var regularCards : List<CardTO> = ArrayList()
+        val dbThread = Thread {
+            regularCards = mdb.cardsModel().getRegularCards().map { CardTO(it) }.toList()
+        }
+        dbThread.start()
+        dbThread.join()
+        return regularCards
+    }
+
     override fun getInitialMainCards(): List<CardTO> {
         var initialCards : List<CardTO> = ArrayList()
         val dbThread = Thread {

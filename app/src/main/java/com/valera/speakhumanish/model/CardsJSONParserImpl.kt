@@ -62,6 +62,12 @@ class CardsJSONParserImpl
         return ArrayList(staticCards.values)
     }
 
+    override fun getRegularCards(): List<CardTO> {
+        //TODO: Not the best implementation,
+        // but this whole class will be removed in the future so what the hell
+        return ArrayList(allCards.values.filter { it.possibleChildren == null })
+    }
+
     override fun getInitialMainCards(): List<CardTO> {
         val initialCards: List<CardTO> = allCards.values.filter { it.isInitialCard }.toList()
         if (initialCards.isEmpty()) {

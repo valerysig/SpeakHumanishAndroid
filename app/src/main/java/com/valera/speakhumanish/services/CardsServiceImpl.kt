@@ -48,6 +48,10 @@ class CardsServiceImpl
         return this.staticCards
     }
 
+    override fun getRegularCards(): List<CardTO> {
+        return cardsParser.getRegularCards()
+    }
+
     override fun getMainCards(): List<CardTO> {
         return this.mainCards
     }
