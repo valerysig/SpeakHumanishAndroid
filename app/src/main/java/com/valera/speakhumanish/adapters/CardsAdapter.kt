@@ -12,6 +12,7 @@ open class CardsAdapter (private val context: Context, private val cards: List<C
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): CardsViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.card_item, parent, false)
         view.layoutParams.width = Supplier.cardsWidth
+        view.layoutParams.height = Supplier.cardsWidth
         backgroudColor?.let {
             view.setBackgroundColor(Color.parseColor(backgroudColor))
         }

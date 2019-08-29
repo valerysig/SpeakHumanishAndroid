@@ -22,6 +22,7 @@ class ParentScreenMainCardsFragment : Fragment(), IGridUpdater {
         "home_image", "drawable", Supplier.contextActivity.packageName
     )
     private val INIAL_TEXT = "Home screen"
+    private val COLUMNS_COUNT = 4
 
     //region Members
     @Inject
@@ -43,7 +44,7 @@ class ParentScreenMainCardsFragment : Fragment(), IGridUpdater {
         super.onStart()
 
         //Init the recycler view
-        val layoutManager = GridLayoutManager(activity, 6)
+        val layoutManager = GridLayoutManager(activity, COLUMNS_COUNT)
         layoutManager.orientation = androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
         nextCards.layoutManager = layoutManager
 
