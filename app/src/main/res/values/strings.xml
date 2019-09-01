@@ -10,4 +10,9 @@
     <string name="current_screen_parent_image">Will contain the current card in question for editing</string>
     <string name="home_screen">Home Screen</string>
     <string name="card_image_description">The image of the card</string>
+    <string name="change_the_image_btn_title">Change The Image</string>
+    <string name="card_title">Card Title:</string>
+    <string name="play">Play</string>
+    <string name="add_sound">Add sound</string>
+    <string name="delete_card">Delete Card</string>
 </resources>

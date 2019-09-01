@@ -69,9 +69,7 @@ class ParentScreenMainCardsFragment : Fragment(), IGridUpdater {
     //region Methods
     override fun updateGrid(cardId: Long, itemView: View) {
         val cardToEdit = cardsService.getCard(cardId)
-        val editIntent = Intent(activity, EditCardActivity::class.java)
-        editIntent.putExtra(CARD_TO_EDIT, cardToEdit)
-        startActivity(editIntent)
+        startEditCardActivity(cardToEdit)
     }
     //endregion
 
@@ -86,9 +84,7 @@ class ParentScreenMainCardsFragment : Fragment(), IGridUpdater {
 
     private fun addNewCardBtnPressed() {
         val cardToEdit = CardTO(Card(label = "What you want to say", imageLocation = "plus_button", isInitialCard = false))
-        val editIntent = Intent(activity, EditCardActivity::class.java)
-        editIntent.putExtra(CARD_TO_EDIT, cardToEdit)
-        startActivity(editIntent)
+        startEditCardActivity(cardToEdit)
     }
 
     private fun updateUI() {
@@ -99,6 +95,12 @@ class ParentScreenMainCardsFragment : Fragment(), IGridUpdater {
             val adapter = MutatingCardsAdapter(activity!!, cardsService.getRegularCards(), this)
             nextCards.adapter = adapter
         }
+    }
+
+    private fun startEditCardActivity(cardToEdit : CardTO) {
+        val editIntent = Intent(activity, EditCardActivity::class.java)
+        editIntent.putExtra(CARD_TO_EDIT, cardToEdit)
+        startActivity(editIntent)
     }
     //endregion
 }
