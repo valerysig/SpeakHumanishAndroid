@@ -1,6 +1,7 @@
 package com.valera.speakhumanish.model
 
 import com.valera.speakhumanish.common.splitNumbers
+import java.io.Serializable
 
 //TODO: Later on make the soundLocationID not an optional
 /**
@@ -12,7 +13,7 @@ data class CardTO (
     val imageLocation: String,
     val soundLocation: String? = null,
     val possibleChildren: Set<Long>? = HashSet(),
-    val isInitialCard : Boolean) {
+    val isInitialCard : Boolean) : Serializable {
 
     constructor(card : Card) : this(card.id,
         card.label,

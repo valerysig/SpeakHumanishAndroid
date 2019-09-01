@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "Cards", indices = arrayOf(Index(value = ["possible_children", "initial_card"])))
 data class Card (
-    @PrimaryKey var id: Long,
+    @PrimaryKey(autoGenerate = true) var id: Long = 0,
     @ColumnInfo(name = "label") val label: String,
     @ColumnInfo(name = "image_location") val imageLocation: String,
     @ColumnInfo(name = "sound_location") val soundLocation: String? = null,

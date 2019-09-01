@@ -1,6 +1,7 @@
 package com.valera.speakhumanish.common
 
 import com.valera.speakhumanish.activities.ChildScreenActivity
+import com.valera.speakhumanish.activities.EditCardActivity
 import com.valera.speakhumanish.activities.ParentScreenMainCardsFragment
 import com.valera.speakhumanish.model.ModelProductionModule
 import com.valera.speakhumanish.services.ServicesProductionModule
@@ -13,4 +14,6 @@ interface ProductionComponent {
     fun inject(childScreenActivity: ChildScreenActivity)
 
     fun inject(parentScreenActivity: ParentScreenMainCardsFragment)
+
+    fun inject(editCardActivity: EditCardActivity)
 }

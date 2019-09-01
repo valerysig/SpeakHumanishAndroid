@@ -8,6 +8,18 @@
         android:columnCount="3"
         android:clipChildren="false"
         android:clipToPadding="false">
+    <!-- Bottom Row -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nextCards"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_row="4"
+        android:layout_rowWeight="12"
+        android:layout_rowSpan="12"
+        android:layout_column="0"
+        android:layout_columnWeight="3"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill"/>
     <!-- First Row -->
     <GridLayout
             android:layout_height="0dp"
@@ -19,6 +31,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
 
+            android:background="#FFFFFF"
             android:orientation="vertical"
             android:rowCount="2"
             android:columnCount="3"
@@ -89,6 +102,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:src="@drawable/home_image"
+            android:background="#FFFFFF"
             android:contentDescription="@string/current_screen_parent_image"/>
     <GridLayout
             android:layout_height="0dp"
@@ -100,6 +114,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
 
+            android:background="#FFFFFF"
             android:orientation="vertical"
             android:rowCount="2"
             android:columnCount="3"
@@ -175,18 +190,6 @@
             app:autoSizeMinTextSize="5sp"
             app:autoSizeMaxTextSize="18sp"
             app:autoSizeStepGranularity="2sp"
-            android:textStyle="bold"/>
-    <!-- Bottom Row -->
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/nextCards"
-            android:layout_height="0dp"
-            android:layout_width="0dp"
-            android:layout_row="4"
-            android:layout_rowWeight="12"
-            android:layout_rowSpan="12"
-            android:layout_column="0"
-            android:layout_columnWeight="3"
-            android:layout_columnSpan="3"
-            android:layout_gravity="fill"/>
-
+            android:textStyle="bold"
+            android:background="#FFFFFF"/>
 </GridLayout>
