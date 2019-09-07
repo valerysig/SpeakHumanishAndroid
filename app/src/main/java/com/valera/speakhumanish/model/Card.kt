@@ -12,12 +12,14 @@ data class Card (
     @ColumnInfo(name = "image_location") val imageLocation: String,
     @ColumnInfo(name = "sound_location") val soundLocation: String? = null,
     @ColumnInfo(name = "possible_children") val possibleChildren: String? = "",
-    @ColumnInfo(name = "initial_card") val isInitialCard : Boolean) {
+    @ColumnInfo(name = "initial_card") val isInitialCard : Boolean,
+    @ColumnInfo(name = "image_uri") val imageUri : String? = null) {
 
     constructor(card : CardTO) : this(card.id,
         card.label,
         card.imageLocation,
         card.soundLocation,
         card.possibleChildren?.toString()?.replace("[", "")?.replace("]", "")?.replace(" ", ""),
-        card.isInitialCard)
+        card.isInitialCard,
+        card.imageUri)
 }

@@ -6,6 +6,7 @@ import android.media.MediaPlayer
 import android.util.Log
 import android.view.View
 import com.valera.speakhumanish.activities.ChildScreenActivity
+import com.valera.speakhumanish.common.setImageSrc
 import com.valera.speakhumanish.model.CardTO
 import kotlinx.android.synthetic.main.card_item.view.*
 
@@ -33,7 +34,7 @@ open class CardsViewHolder(private val context: Context, itemView: View) :  andr
 
     fun setData(card: CardTO?, position: Int) {
         card?.let {
-            this.itemView.imgShare.setImageResource(card.imageLocationID)
+            this.itemView.imgShare.setImageSrc(card)
             this.itemView.txvTitle.text = card.label
         }
 

@@ -9,18 +9,20 @@ import java.io.Serializable
  */
 data class CardTO (
     var id: Long,
-    val label: String,
-    val imageLocation: String,
-    val soundLocation: String? = null,
+    var label: String,
+    var imageLocation: String,
+    var soundLocation: String? = null,
     val possibleChildren: Set<Long>? = HashSet(),
-    val isInitialCard : Boolean) : Serializable {
+    val isInitialCard : Boolean,
+    var imageUri : String? = null) : Serializable {
 
     constructor(card : Card) : this(card.id,
         card.label,
         card.imageLocation,
         card.soundLocation,
         card.possibleChildren?.splitNumbers(","),
-        card.isInitialCard)
+        card.isInitialCard,
+        card.imageUri)
 
     val imageLocationID : Int
         get() {
